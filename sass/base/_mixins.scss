@@ -1,0 +1,43 @@
+ 
+
+// Mixin to calculate font size based on min & max values
+@mixin font-size($minSize, $maxSize, $minView, $maxView) {
+    /** calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) 
+        / ([maximum viewport width] - [minimum viewport width])));
+    **/
+    font-size: calc($minSize + ($maxSize - $minSize) * ((100vw - $minView) 
+        / ($maxView - $minView)));
+}
+
+/* 
+    Mixin to set a margin for a layout
+*/
+@mixin layout-marign($arg...) {
+    @if length($arg) == 1 {
+       margin: nth($arg, 1);        
+    }
+    @else if length($arg) == 2 {
+        // mobile only
+        @media only screen and (max-width: 601px) {
+            margin: nth($arg, 1);
+        } 
+        // for tablets and up
+        @media only screen and (min-width: 602px) {
+            margin: nth($arg, 2);
+        }        
+    } 
+    @else if length($arg) == 3 {
+        // mobiles
+        @media only screen and (max-width: 601px) {
+            margin: nth($arg, 1);
+        } 
+        // tablets
+        @media only screen and (min-width: 602px) {
+            margin: nth($arg, 2);
+        } 
+        // Desktops
+        @media only screen and (min-width: 902px) {
+            margin: nth($arg, 3);
+        }        
+    }    
+}

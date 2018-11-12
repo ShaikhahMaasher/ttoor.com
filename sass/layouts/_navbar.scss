@@ -1,0 +1,27 @@
+$nav-height: 50px;
+nav {
+    display: flex;
+    max-height: $nav-height;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    img {
+        width: $icon-size;
+    }
+}
+
+.menu-bar{
+    width: $icon-size;
+    img {
+        width: 50%;
+    }
+}
+
+html[lang="ar-sa"] {
+    nav {
+        flex-direction: row-reverse;
+    }
+}

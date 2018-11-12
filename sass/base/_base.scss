@@ -1,0 +1,10 @@
+.pull-right {
+    float: right;
+    &::after {
+        clear: both;
+    }
+}
+
+.page-container {
+    @include layout-marign($mobile-page-container, $tablet-page-container, $desk-page-container);
+}

@@ -1,3 +1,169 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 100;
+  src: local("☺︎"), url("/assets/fonts/SF-Pro-Display/sf-pro-display_ultralight.woff2") format("woff2"), url("/assets/fonts/SF-Pro-Display/sf-pro-display_ultralight.woff") format("woff"), url("/assets/fonts/SF-Pro-Display/sf-pro-display_ultralight.ttf") format("truetype");
+}
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 600;
+  src: local("☺︎"), url("/assets/fonts/SF-Pro-Display/sf-pro-display_semibold.woff2") format("woff2"), url("/assets/fonts/SF-Pro-Display/sf-pro-display_semibold.woff") format("woff"), url("/assets/fonts/SF-Pro-Display/sf-pro-display_semibold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/SF-Pro-Display/sf-pro-display_regular.eot");
+  src: local("☺︎"), url("/assets/fonts/SF-Pro-Display/sf-pro-display_regular.woff2") format("woff2"), url("/assets/fonts/SF-Pro-Display/sf-pro-display_regular.woff") format("woff"), url("/assets/fonts/SF-Pro-Display/sf-pro-display_regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "SF Pro Text";
+  font-style: normal;
+  font-weight: 300;
+  src: local("☺︎"), url("/assets/fonts/SF-Pro-Text/sf-pro-text_light.woff2") format("woff2"), url("/assets/fonts/SF-Pro-Text/sf-pro-text_light.woff") format("woff"), url("/assets/fonts/SF-Pro-Text/sf-pro-text_light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "SF Pro Text";
+  font-style: normal;
+  font-weight: 600;
+  src: local("☺︎"), url("/assets/fonts/SF-Pro-Text/sf-pro-text_semibold.woff2") format("woff2"), url("/assets/fonts/SF-Pro-Text/sf-pro-text_semibold.woff") format("woff"), url("/assets/fonts/SF-Pro-Text/sf-pro-text_semibold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "SF Pro Text";
+  font-style: normal;
+  font-weight: bold;
+  src: local("☺︎"), url("/assets/fonts/SF-Pro-Text/sf-pro-text_bold.woff2") format("woff2"), url("/assets/fonts/SF-Pro-Text/sf-pro-text_bold.woff") format("woff"), url("/assets/fonts/SF-Pro-Text/sf-pro-text_bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "SF Pro Text";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/SF-Pro-Text/sf-pro-text_regular.eot");
+  src: local("☺︎"), url("/assets/fonts/SF-Pro-Text/sf-pro-text_regular.woff2") format("woff2"), url("/assets/fonts/SF-Pro-Text/sf-pro-text_regular.woff") format("woff"), url("/assets/fonts/SF-Pro-Text/sf-pro-text_regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "SF Pro Gulf";
+  font-style: normal;
+  font-weight: 700;
+  src: local("☺︎"), url("/assets/fonts/SF-Pro-Gulf/SFProGulf_bold.woff2") format("woff2"), url("/assets/fonts/SF-Pro-Gulf/SFProGulf_bold.woff") format("woff"), url("/assets/fonts/SF-Pro-Gulf/SFProGulf_bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "SF Pro Gulf";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/SF-Pro-Gulf/SFProGulf_regular.eot");
+  src: local("☺︎"), url("/assets/fonts/SF-Pro-Gulf/SFProGulf_regular.woff2") format("woff2"), url("/assets/fonts/SF-Pro-Gulf/SFProGulf_regular.woff") format("woff"), url("/assets/fonts/SF-Pro-Gulf/SFProGulf_regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "SF Pro Icons";
+  font-style: normal;
+  font-weight: 300;
+  src: local("☺︎"), url("/assets/fonts/SF-Pro-Icons/SFProIcons_light.woff") format("woff"), url("/assets/fonts/SF-Pro-Icons/SFProIcons_light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "SF Pro Icons";
+  font-style: normal;
+  font-weight: 600;
+  src: local("☺︎"), url("/assets/fonts/SF-Pro-Icons/SFProIcons_semibold.woff") format("woff"), url("/assets/fonts/SF-Pro-Icons/SFProIcons_semibold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "SF Pro Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: local("☺︎"), url("/assets/fonts/SF-Pro-Icons/SFProIcons_regular.woff") format("woff"), url("/assets/fonts/SF-Pro-Icons/SFProIcons_regular.ttf") format("truetype");
+}
+html, body,
+body * {
+  margin: unset;
+  box-sizing: unset;
+  padding: unset;
+  font-size: unset;
+  color: unset;
+  text-decoration: unset;
+  border: unset;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  font-family: "Helvetica", sans-serif;
+  box-shadow: unset;
+}
 
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+/*// ****************** //*/
+/*//       COLORS       //*/
+/*// ****************** //*/
+/*// ****************** //*/
+/*// LAYOUT VARIABLES   //*/
+/*// ****************** //*/
+/*// ****************** //*/
+/*// ASSETS VARIABLES   //*/
+/*// ****************** //*/
+/* 
+    Mixin to set a margin for a layout
+*/
+.pull-right {
+  float: right;
+}
+.pull-right::after {
+  clear: both;
+}
+
+@media only screen and (max-width: 601px) {
+  .page-container {
+    margin: 5px;
+  }
+}
+@media only screen and (min-width: 602px) {
+  .page-container {
+    margin: 10px;
+  }
+}
+@media only screen and (min-width: 902px) {
+  .page-container {
+    margin: 15px;
+  }
+}
+
+nav {
+  display: flex;
+  max-height: 50px;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  width: 50px;
+}
+
+.menu-bar {
+  width: 50px;
+}
+.menu-bar img {
+  width: 50%;
+}
+
+html[lang=ar-sa] nav {
+  flex-direction: row-reverse;
+}
 
 /*# sourceMappingURL=app.css.map */
