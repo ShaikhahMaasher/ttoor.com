@@ -7,4 +7,5 @@
 
 .page-container {
     @include layout-marign($mobile-page-container, $tablet-page-container, $desk-page-container);
+    height: 100%;
 }

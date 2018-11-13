@@ -41,3 +41,22 @@
         }        
     }    
 }
+
+
+@mixin flex-container($dir, $horizontal-alignment, $vertical-alignment) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $horizontal-alignment;
+    align-items: $vertical-alignment;
+}
+
+// a mixin to set up flex ($grow, $shrink, $basis)
+@mixin flex-items($flex-val...) {
+    @if length($flex-val) == 1 {
+        flex: nth($flex-val, 1);
+    }
+    @else if length($flex-val) == 3 {
+        flex: nth($flex-val, 1) nth($flex-val, 2) nth($flex-val, 3);
+    }
+}
+

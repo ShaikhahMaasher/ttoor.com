@@ -15,7 +15,8 @@ nav {
 
 .menu-bar{
     width: $icon-size;
-    img {
+    svg {
+        fill: $grey;
         width: 50%;
     }
 }

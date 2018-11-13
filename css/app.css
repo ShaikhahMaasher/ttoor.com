@@ -74,6 +74,11 @@
   font-weight: 400;
   src: local("☺︎"), url("/assets/fonts/SF-Pro-Icons/SFProIcons_regular.woff") format("woff"), url("/assets/fonts/SF-Pro-Icons/SFProIcons_regular.ttf") format("truetype");
 }
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
 html, body,
 body * {
   margin: unset;
@@ -125,6 +130,9 @@ li {
   clear: both;
 }
 
+.page-container {
+  height: 100%;
+}
 @media only screen and (max-width: 601px) {
   .page-container {
     margin: 5px;
@@ -158,7 +166,8 @@ nav {
 .menu-bar {
   width: 50px;
 }
-.menu-bar img {
+.menu-bar svg {
+  fill: #9FA8B3;
   width: 50%;
 }
 
