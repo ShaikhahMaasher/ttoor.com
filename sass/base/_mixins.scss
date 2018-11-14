@@ -1,12 +1,17 @@
  
 
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
 // Mixin to calculate font size based on min & max values
-@mixin font-size($minSize, $maxSize, $minView, $maxView) {
+@mixin font-size($min-size, $max-size, $min-view, $max-view) {
     /** calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) 
         / ([maximum viewport width] - [minimum viewport width])));
     **/
-    font-size: calc($minSize + ($maxSize - $minSize) * ((100vw - $minView) 
-        / ($maxView - $minView)));
+    font-size: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} 
+                * ((100vw - #{$min-view}) 
+                / #{strip-unit($max-view - $min-view)}));
 }
 
 /* 
@@ -60,3 +65,28 @@
     }
 }
 
+// a mixin for resposive
+// arg if two : arg#1 'min','max' . arg#2 value px 
+// arg if three: arg#1 'min','max' . arg#2 value px . arg#3 valuepx
+
+
+@mixin responsive($arg...) {
+    @if length($arg) == 2 {
+        @if nth($arg, 1) == 'min' {
+            @media only screen and (min-width:nth($arg, 2)) {
+                @content;
+        }
+        }  
+        @else if nth($arg, 1) == 'max'{
+            @media only screen and (max-width:nth($arg, 2)) {
+                @content;
+        }
+     }
+    }  
+
+    @else if length($arg) == 3{
+        @media only screen and (min-width:nth($arg, 2)) and (max-width:nth($arg, 3))  {
+            @content;
+    }
+    }
+}

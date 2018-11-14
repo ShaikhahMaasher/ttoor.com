@@ -9,15 +9,24 @@ $off-white: #F6F6F6;
 $white-grey: #CDCDD2;
 $black: #091220 ;
 
-/*// ****************** //*/
+/*// ************** //*/
 /*// LAYOUT VARIABLES   //*/
-/*// ****************** //*/
+/*// ************** //*/
 $desk-page-container: 15px;
 $tablet-page-container: 10px;
 $mobile-page-container: 5px;
 
+$max-view: 1600px;
+$min-view: 300px;
 
-/*// ****************** //*/
+/*// ************** //*/
 /*// ASSETS VARIABLES   //*/
-/*// ****************** //*/
+/*// ************** //*/
 $icon-size: 50px;
+
+// Fonts 
+$max-title: 80px;
+$min-title: 32px;
+
+$max-sub-title: 24px;
+$min-sub-title: 12px;

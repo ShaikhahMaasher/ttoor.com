@@ -94,7 +94,7 @@ body * {
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
-  font-family: "Helvetica", sans-serif;
+  font-family: "SF Pro Gulf", "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   box-shadow: unset;
 }
 
@@ -114,12 +114,12 @@ li {
 /*// ****************** //*/
 /*//       COLORS       //*/
 /*// ****************** //*/
-/*// ****************** //*/
+/*// ************** //*/
 /*// LAYOUT VARIABLES   //*/
-/*// ****************** //*/
-/*// ****************** //*/
+/*// ************** //*/
+/*// ************** //*/
 /*// ASSETS VARIABLES   //*/
-/*// ****************** //*/
+/*// ************** //*/
 /* 
     Mixin to set a margin for a layout
 */
@@ -133,26 +133,144 @@ li {
 .page-container {
   height: 100%;
 }
+
+@media only screen and (max-width: 785px) {
+  #hero {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+}
+body {
+  overflow-x: hidden;
+}
+
+#hero {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (max-width: 785px) {
+  #hero {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+}
+#hero .text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: right;
+}
 @media only screen and (max-width: 601px) {
-  .page-container {
+  #hero .text {
     margin: 5px;
   }
 }
 @media only screen and (min-width: 602px) {
-  .page-container {
+  #hero .text {
     margin: 10px;
   }
 }
 @media only screen and (min-width: 902px) {
-  .page-container {
-    margin: 15px;
+  #hero .text {
+    margin: 40px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #hero .text {
+    transform: translateX(-20px);
+  }
+}
+@media only screen and (max-width: 785px) {
+  #hero .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 350px;
+  }
+}
+#hero .text .title {
+  /** calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) 
+      / ([maximum viewport width] - [minimum viewport width])));
+  **/
+  font-size: calc(60px + 20 * ((100vw - 300px) / 1300));
+  color: #091220;
+  font-weight: bold;
+}
+#hero .text .sub-title {
+  /** calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) 
+      / ([maximum viewport width] - [minimum viewport width])));
+  **/
+  font-size: calc(14px + 10 * ((100vw - 300px) / 1300));
+  color: #9FA8B3;
+}
+#hero .media {
+  flex: 2;
+  width: 100%;
+  height: 100%;
+}
+#hero .media svg {
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  z-index: -1;
+  width: 100%;
+}
+@media only screen and (max-width: 785px) {
+  #hero .media svg {
+    left: 2%;
+  }
+}
+@media only screen and (min-width: 786px) {
+  #hero .media svg {
+    left: 10%;
+  }
+}
+@media only screen and (min-width: 902px) {
+  #hero .media svg {
+    left: 15%;
+  }
+}
+@media only screen and (min-width: 993px) {
+  #hero .media svg {
+    left: 25%;
   }
 }
 
 nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
   display: flex;
   max-height: 50px;
   justify-content: space-between;
+}
+@media only screen and (max-width: 601px) {
+  nav {
+    margin: 5px;
+  }
+}
+@media only screen and (min-width: 602px) {
+  nav {
+    margin: 10px;
+  }
+}
+@media only screen and (min-width: 902px) {
+  nav {
+    margin: 15px;
+  }
 }
 
 .logo {
