@@ -1,4 +1,8 @@
 
+body {
+    overflow-x: hidden;
+}
+
 body, body * {
 font-family: $font-stack;
 }
