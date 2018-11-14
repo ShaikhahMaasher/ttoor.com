@@ -1,0 +1,55 @@
+
+.title {
+    @include font-size($min-title, $max-title, $min-view, $max-view);
+    color: $dark-grey;
+    font-weight: bold;
+    @extend %padding-text;
+}
+
+.sub-title {
+    @include font-size($min-sub-title, $max-sub-title, $min-view, $max-view);
+    color: $dark-grey;
+    opacity: 0.6;
+    @extend %padding-text;
+}
+
+.work {
+    &:nth-child(even) {
+        @include flex-container(row, flex-start, center);
+    }
+    &:nth-child(odd) {
+        @include flex-container(row-reverse, flex-start, center);
+    }
+    .text {
+        flex-basis: 50%;
+        @include layout-marign($mobile-elm-margin, $tablet-elm-margin, $desk-elm-margin);
+    }
+    .desc {
+        padding-bottom: 20px;
+    }
+    .media {
+        flex-basis: 50%;
+        margin-right: auto;
+        padding: 120px 0;
+        // position: relative;
+        // left: 0;
+        // top: 0;
+        // bottom: 0;
+    }
+}
+
+html[lang=ar-sa] {
+    .text {
+        text-align: right;
+    }
+}
+
+.tags {
+    @include flex-container(row-reverse, flex-start, flex-start);
+    @extend %padding-text;
+    .tag {
+        background: rgba(255, 255, 255, 0.3);
+        font-size: 14px;
+        @extend %rounded-shape
+    }
+}

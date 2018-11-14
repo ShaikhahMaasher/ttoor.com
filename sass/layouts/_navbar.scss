@@ -1,8 +1,14 @@
 $nav-height: 50px;
 nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
     display: flex;
-    max-height: $nav-height;
+    max-height: 50px;
     justify-content: space-between;
+    @include layout-marign($mobile-nav-margin, $tablet-nav-margin, $desk-nav-margin);
+    z-index: 2;
 }
 
 .logo {
@@ -13,7 +19,7 @@ nav {
     }
 }
 
-.menu-bar{
+.menu-bar {
     width: $icon-size;
     svg {
         fill: $grey;

@@ -9,15 +9,42 @@ $off-white: #F6F6F6;
 $white-grey: #CDCDD2;
 $black: #091220 ;
 
+// Dumy colors
+$paper-yellow: #FBB077;
+$paper-purple: #440F4E;
+$paper-red: #D5425E;
+
 /*// ****************** //*/
 /*// LAYOUT VARIABLES   //*/
 /*// ****************** //*/
-$desk-page-container: 15px;
-$tablet-page-container: 10px;
-$mobile-page-container: 5px;
 
+// Margins 
+$desk-nav-margin: 15px;
+$tablet-nav-margin: 10px;
+$mobile-nav-margin: 5px;
+
+$desk-elm-margin: 80px; 
+$tablet-elm-margin: 60px; 
+$mobile-elm-margin: 0 auto; 
+
+
+$max-view: 1600px;
+$min-view: 300px;
 
 /*// ****************** //*/
 /*// ASSETS VARIABLES   //*/
 /*// ****************** //*/
+
+// Fonts 
+$font-stack: "SF Pro Gulf", "SF Pro Text", "SF Pro Icons", 
+                "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+// Text Size
+$max-title: 50px;
+$min-title: 24px;
+
+$max-sub-title: 24px;
+$min-sub-title: 12px;
+
+// Image Size
 $icon-size: 50px;

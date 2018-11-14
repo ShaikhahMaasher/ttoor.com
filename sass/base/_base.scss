@@ -1,3 +1,8 @@
+
+body, body * {
+font-family: $font-stack;
+}
+
 .pull-right {
     float: right;
     &::after {
@@ -5,7 +10,7 @@
     }
 }
 
-.page-container {
-    @include layout-marign($mobile-page-container, $tablet-page-container, $desk-page-container);
-    height: 100%;
+.container {
+    @include layout-marign($mobile-nav-margin, $tablet-nav-margin, $desk-nav-margin);
 }
+

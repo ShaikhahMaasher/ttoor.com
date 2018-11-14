@@ -8,16 +8,14 @@ html
             title ttoor | Home
             link(href="css/app.css", rel="stylesheet", type="text/css")
         body
-            div.page-container
+            div.page-wrapper
                 header#header
                     nav
                         div.logo
                             img(src="assets/images/dumy-logo.png", alt="ttoor")
                         div.menu-bar
-                            //- img(src="assets/images/menu-icon.svg", alt="menu")
                             include ./assets/images/menu-icon.jade
                 main#main-content
-                article
                     section#hero
                         div.text
                             h1.title
@@ -26,18 +24,44 @@ html
                     section#works
                         div.work
                             div.text
-                                h1.title
-                                h2.highlight
+                                h1.title قنة
+                                h2.sub-title.highlight منصة تجارة إلكترونية
                                 div.tags
-                                    div.tag
-                                    div.tag
-                                    div.tag
-                                p.desc
+                                    div.tag laravel
+                                    div.tag mysql
+                                    div.tag php
+                                p.desc منصة تجارة الكترونية منصة تجارة الكترونية منصة تجارة الكترونية منصة تجارة الكترونية منصة تجارة الكترونية منصة تجارة الكترونية
+                                button.cta-btn شاهد المزيد
                             div.media
+                                include ./assets/images/browser-img.jade
+                        div.work
+                            div.text
+                                h1.title قنة
+                                h2.sub-title.highlight منصة تجارة إلكترونية
+                                div.tags
+                                    div.tag laravel
+                                    div.tag mysql
+                                    div.tag php
+                                p.desc منصة تجارة الكترونية منصة تجارة الكترونية منصة تجارة الكترونية منصة تجارة الكترونية منصة تجارة الكترونية منصة تجارة الكترونية
+                                button.cta-btn شاهد المزيد
+                            div.media
+                                include ./assets/images/browser-img.jade
+                        div.work
+                            div.text
+                                h1.title قنة
+                                h2.sub-title.highlight منصة تجارة إلكترونية
+                                div.tags
+                                    div.tag laravel
+                                    div.tag mysql
+                                    div.tag php
+                                p.desc منصة تجارة الكترونية منصة تجارة الكترونية منصة تجارة الكترونية منصة تجارة الكترونية منصة تجارة الكترونية منصة تجارة الكترونية
+                                button.cta-btn شاهد المزيد
+                            div.media
+                                include ./assets/images/browser-img.jade
                         div.cta
-                            h1.title
-                            p.stmt
-                            button.cta-btn
+                            h1.title شاهد المزيد من أعمال طور 
+                            p.sub-title.stmt اطلع على تطبيقنا لمشاريع الويب من بداية الفكرة إلى التصميم ثم التطوير انتهاءاً بنشر المشروع على الويب
+                            button.cta-btn شاهد جميع أعمالنا
                     section#workflow
                         div.item
                             div.icon
@@ -49,11 +73,11 @@ html
                         p.stmt
                         button.cta-btn
                 footer#footer
-                ul
-                    li.copyright
-                    li.social
-                        ul
-                            li.social-item
-                            li.social-item
-                            li.social-item
+                    ul
+                        li.copyright
+                        li.social
+                            ul
+                                li.social-item
+                                li.social-item
+                                li.social-item
             script(src="js/app.js")
