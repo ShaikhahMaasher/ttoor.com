@@ -1,95 +1,141 @@
- 
-@function strip-unit($value) {
-    @return $value / ($value * 0 + 1);
-}
+ @function strip-unit($value) {
+     @return $value / ($value * 0 + 1);
+ }
 
-@function strip-unit($value) {
-    @return $value / ($value * 0 + 1);
-}
+ @function strip-unit($value) {
+     @return $value / ($value * 0 + 1);
+ }
 
-// Mixin to calculate font size based on min & max values
-@mixin font-size($min-size, $max-size, $min-view, $max-view) {
-    /** calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) 
+ // Mixin to calculate font size based on min & max values
+ @mixin font-size($min-size, $max-size, $min-view, $max-view) {
+     /** calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) 
         / ([maximum viewport width] - [minimum viewport width])));
     **/
-    font-size: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} 
-                * ((100vw - #{$min-view}) 
-                / #{strip-unit($max-view - $min-view)}));
-}
+     font-size: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-view}) / #{strip-unit($max-view - $min-view)}));
+ }
 
-/* 
+ /* 
     Mixin to set a margin for a layout
 */
-@mixin layout-marign($arg...) {
-    @if length($arg) == 1 {
-       margin: nth($arg, 1);        
-    }
-    @else if length($arg) == 2 {
-        // mobile only
-        @media only screen and (max-width: 601px) {
-            margin: nth($arg, 1);
-        } 
-        // for tablets and up
-        @media only screen and (min-width: 602px) {
-            margin: nth($arg, 2);
-        }        
-    } 
-    @else if length($arg) == 3 {
-        // mobiles
-        @media only screen and (max-width: 601px) {
-            margin: nth($arg, 1);
-        } 
-        // tablets
-        @media only screen and (min-width: 602px) {
-            margin: nth($arg, 2);
-        } 
-        // Desktops
-        @media only screen and (min-width: 902px) {
-            margin: nth($arg, 3);
-        }        
-    }    
-}
-
-
-@mixin flex-container($dir, $horizontal-alignment, $vertical-alignment) {
-    display: flex;
-    flex-direction: $dir;
-    justify-content: $horizontal-alignment;
-    align-items: $vertical-alignment;
-}
-
-// a mixin to set up flex ($grow, $shrink, $basis)
-@mixin flex-items($flex-val...) {
-    @if length($flex-val) == 1 {
-        flex: nth($flex-val, 1);
-    }
-    @else if length($flex-val) == 3 {
-        flex: nth($flex-val, 1) nth($flex-val, 2) nth($flex-val, 3);
-    }
-}
-
-// a mixin for resposive
-// arg if two : arg#1 'min','max' . arg#2 value px 
-// arg if three: arg#1 'min','max' . arg#2 value px . arg#3 valuepx
-
-
-@mixin responsive($arg...) {
-    @if length($arg) == 2 {
-        @if nth($arg, 1) == 'min' {
-            @media only screen and (min-width:nth($arg, 2)) {
-                @content;
-        }
-        }  
-        @else if nth($arg, 1) == 'max'{
-            @media only screen and (max-width:nth($arg, 2)) {
-                @content;
-        }
+ @mixin layout-marign($arg...) {
+     @if length($arg)==1 {
+         margin: nth($arg, 1);
      }
-    }  
 
-    @else if length($arg) == 3{
-        @media only screen and (min-width:nth($arg, 2)) and (max-width:nth($arg, 3))  {
-            @content;
-    }
-    }
-}
+     @else if length($arg)==2 {
+
+         // mobile only
+         @media only screen and (max-width: 601px) {
+             margin: nth($arg, 1);
+         }
+
+         // for tablets and up
+         @media only screen and (min-width: 602px) {
+             margin: nth($arg, 2);
+         }
+     }
+
+     @else if length($arg)==3 {
+
+         // mobiles
+         @media only screen and (max-width: 601px) {
+             margin: nth($arg, 1);
+         }
+
+         // tablets
+         @media only screen and (min-width: 602px) {
+             margin: nth($arg, 2);
+         }
+
+         // Desktops
+         @media only screen and (min-width: 902px) {
+             margin: nth($arg, 3);
+         }
+     }
+ }
+
+ /* 
+    Mixin to set a padding for a layout
+*/
+ @mixin layout-padding($arg...) {
+     @if length($arg)==1 {
+         padding: nth($arg, 1);
+     }
+
+     @else if length($arg)==2 {
+
+         // mobile only
+         @media only screen and (max-width: 601px) {
+             padding: nth($arg, 1);
+         }
+
+         // for tablets and up
+         @media only screen and (min-width: 602px) {
+             padding: nth($arg, 2);
+         }
+     }
+
+     @else if length($arg)==3 {
+
+         // mobiles
+         @media only screen and (max-width: 601px) {
+             padding: nth($arg, 1);
+         }
+
+         // tablets
+         @media only screen and (min-width: 602px) {
+             padding: nth($arg, 2);
+         }
+
+         // Desktops
+         @media only screen and (min-width: 902px) {
+             padding: nth($arg, 3);
+         }
+     }
+ }
+
+
+ @mixin flex-container($dir, $horizontal-alignment, $vertical-alignment) {
+     display: flex;
+     flex-direction: $dir;
+     justify-content: $horizontal-alignment;
+     align-items: $vertical-alignment;
+ }
+
+ // a mixin to set up flex ($grow, $shrink, $basis)
+ @mixin flex-items($flex-val...) {
+     @if length($flex-val)==1 {
+         flex: nth($flex-val, 1);
+     }
+
+     @else if length($flex-val)==3 {
+         flex: nth($flex-val, 1) nth($flex-val, 2) nth($flex-val, 3);
+     }
+ }
+
+ // a mixin for resposive
+ // arg if two : arg#1 'min','max' . arg#2 value px 
+ // arg if three: arg#1 'min','max' . arg#2 value px . arg#3 valuepx
+
+
+ @mixin responsive($arg...) {
+     @if length($arg)==2 {
+         @if nth($arg, 1)=='min' {
+             @media only screen and (min-width: nth($arg, 2)) {
+                 @content;
+             }
+         }
+
+         @else if nth($arg, 1)=='max' {
+             @media only screen and (max-width: nth($arg, 2)) {
+                 @content;
+             }
+         }
+     }
+
+     @else if length($arg)==3 {
+         @media only screen and (min-width: nth($arg, 2)) and (max-width:nth($arg, 3)) {
+             @content;
+         }
+     }
+ }

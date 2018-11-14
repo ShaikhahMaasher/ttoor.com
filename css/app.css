@@ -127,6 +127,9 @@ a {
 /* 
     Mixin to set a margin for a layout
 */
+/* 
+    Mixin to set a padding for a layout
+*/
 body {
   overflow-x: hidden;
 }
@@ -373,6 +376,80 @@ html[lang=ar-sa] .text {
   #hero .media svg {
     left: 25%;
   }
+}
+
+/*// ************** //*/
+/*// WORKFLOW STYLE //*/
+/*// ************** //*/
+#workflow {
+  width: 100%;
+  text-align: center;
+  background: #9FA8B3;
+  box-sizing: border-box;
+}
+@media only screen and (max-width: 601px) {
+  #workflow {
+    padding: 0 auto;
+  }
+}
+@media only screen and (min-width: 602px) {
+  #workflow {
+    padding: 60px;
+  }
+}
+@media only screen and (min-width: 902px) {
+  #workflow {
+    padding: 80px;
+  }
+}
+#workflow .item {
+  text-align: -webkit-left;
+  text-align: -moz-left;
+  text-align: -o-left;
+  text-align: -ms-left;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 380px;
+}
+#workflow .item:nth-child(even) {
+  text-align: -webkit-left;
+  text-align: -moz-left;
+  text-align: -o-left;
+  text-align: -ms-left;
+  text-align: left;
+}
+@media only screen and (max-width: 600px) {
+  #workflow .item:nth-child(even) {
+    margin-left: auto;
+  }
+}
+#workflow .item:nth-child(odd) {
+  text-align: -webkit-right;
+  text-align: -moz-right;
+  text-align: -o-right;
+  text-align: -ms-right;
+  text-align: right;
+  margin-left: auto;
+}
+#workflow .item .icon {
+  width: calc(50px *2);
+  margin-left: 20px;
+  margin-top: 20px;
+  align-self: flex-end;
+}
+#workflow .item .icon svg {
+  fill: #D5425E;
+}
+#workflow .item .text {
+  color: #F6F6F6;
+  margin-top: -50px;
+  max-width: 300px;
+}
+#workflow .item .text .title {
+  color: #F6F6F6;
 }
 
 nav {

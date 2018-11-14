@@ -120,3 +120,58 @@ html[lang=ar-sa] {
         }
     }
 }
+
+/*// ************** //*/
+/*// WORKFLOW STYLE //*/
+/*// ************** //*/
+#workflow{
+    width: 100%;
+    text-align: center;
+    background: $grey;
+    box-sizing: border-box;
+    @include layout-padding($mobile-elm-margin,$tablet-elm-margin,$desk-elm-margin);
+    .item {
+        text-align: -webkit-left;
+        text-align: -moz-left;
+        text-align: -o-left; 
+        text-align: -ms-left;
+        text-align: left;
+        @include flex-container(column,center,flex-start);
+        max-width: 380px;
+        &:nth-child(even){
+            text-align: -webkit-left;
+            text-align: -moz-left;
+            text-align: -o-left; 
+            text-align: -ms-left;
+            text-align: left;
+            @include responsive('max',600px){
+                margin-left: auto;
+            }
+        }
+        &:nth-child(odd){
+            text-align: -webkit-right;
+            text-align: -moz-right;
+            text-align: -o-right; 
+            text-align: -ms-right;
+            text-align: right;
+            margin-left: auto;
+        }
+        .icon {
+            width:calc(#{$icon-size} *2);
+            margin-left: 20px;
+            margin-top: 20px;
+            align-self: flex-end;
+            svg{
+                fill:$paper-red;
+            }
+        }
+        .text {
+            color: $off-white;
+            margin-top: -50px;
+            max-width: 300px;
+            .title {
+                color:$off-white;
+            }
+        }
+    }
+}
