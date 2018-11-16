@@ -1,17 +1,3 @@
-.title {
-    @include font-size($min-title, $max-title, $min-view, $max-view);
-    color: $dark-grey;
-    font-weight: bold;
-    @extend %padding-text;
-}
-
-.sub-title {
-    @include font-size($min-sub-title, $max-sub-title, $min-view, $max-view);
-    color: $dark-grey;
-    opacity: 0.6;
-    @extend %padding-text;
-}
-
 .work {
     &:nth-child(even) {
         @include flex-container(row, flex-start, center);
@@ -80,13 +66,13 @@ html[lang=ar-sa] {
         }
 
         .title {
-            @include font-size(60px, 80px, $min-view, $max-view);
+            @include size(font-size, 60px, 80px, $min-view, $max-view);
             color: $black;
             font-weight: bold;
         }
 
         .sub-title {
-            @include font-size(14px, $max-sub-title, $min-view, $max-view);
+            @include size(font-size, 14px, $max-sub-title, $min-view, $max-view);
             color: $grey;
         }
     }
@@ -124,54 +110,87 @@ html[lang=ar-sa] {
 /*// ************** //*/
 /*// WORKFLOW STYLE //*/
 /*// ************** //*/
-#workflow{
+#workflow {
     width: 100%;
     text-align: center;
     background: $grey;
     box-sizing: border-box;
-    @include layout-padding($mobile-elm-margin,$tablet-elm-margin,$desk-elm-margin);
+    @include layout-padding($mobile-elm-margin, $tablet-elm-margin, $desk-elm-margin);
+
     .item {
         text-align: -webkit-left;
         text-align: -moz-left;
-        text-align: -o-left; 
+        text-align: -o-left;
         text-align: -ms-left;
         text-align: left;
-        @include flex-container(column,center,flex-start);
+        @include flex-container(column, center, flex-start);
         max-width: 380px;
-        &:nth-child(even){
+        @include layout-padding(20px, $tablet-elm-margin 0px, $desk-elm-margin);
+
+        &:nth-child(even) {
             text-align: -webkit-left;
             text-align: -moz-left;
-            text-align: -o-left; 
+            text-align: -o-left;
             text-align: -ms-left;
             text-align: left;
-            @include responsive('max',600px){
+
+            @include responsive('max', 600px) {
                 margin-left: auto;
             }
         }
-        &:nth-child(odd){
+
+        &:nth-child(odd) {
             text-align: -webkit-right;
             text-align: -moz-right;
-            text-align: -o-right; 
+            text-align: -o-right;
             text-align: -ms-right;
             text-align: right;
             margin-left: auto;
         }
+
         .icon {
-            width:calc(#{$icon-size} *2);
+            @include size(width, 60px, 100px, $min-view, $max-view);
             margin-left: 20px;
             margin-top: 20px;
             align-self: flex-end;
-            svg{
-                fill:$paper-red;
+
+            svg {
+                fill: $paper-red;
             }
         }
+
         .text {
             color: $off-white;
             margin-top: -50px;
             max-width: 300px;
+
             .title {
-                color:$off-white;
+                color: $off-white;
             }
         }
+    }
+}
+
+.main-cta {
+    background: $grey;
+    @include layout-padding(0 $mobile-elm-margin, 0 $tablet-elm-margin, 0 $desk-elm-margin);
+    box-sizing: border-box;
+    .stmt {
+        color: $off-white;
+        @include size(font-size, $min-sub-title, $max-sub-title, $min-view, $max-view);
+    }
+    span {
+        display: block;
+        text-align: right;
+    }
+    button {
+        float: right;
+        margin-top: 20px;
+        @include btn(0 60px, transparent, 2px solid $off-white, $off-white);
+    }
+    &::after{
+        content: "";
+        clear: both;
+        display: table;
     }
 }

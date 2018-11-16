@@ -26,6 +26,24 @@
     text-align: center;
 }
 
+%sub-title-size {
+    @include size(font-size, $min-sub-title, $max-sub-title, $min-view, $max-view);
+}
+
+.title {
+    @include size(font-size, $min-title, $max-title, $min-view, $max-view);
+    color: $dark-grey;
+    font-weight: bold;
+    @extend %padding-text;
+}
+
+.sub-title {
+    @extend %sub-title-size;
+    color: $dark-grey;
+    opacity: 0.6;
+    @extend %padding-text;
+}
+
 // colors
 .purple {
     background: $paper-purple;

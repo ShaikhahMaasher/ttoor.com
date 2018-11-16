@@ -125,10 +125,10 @@ a {
 /*// ASSETS VARIABLES   //*/
 /*// ****************** //*/
 /* 
-    Mixin to set a margin for a layout
+Mixin to set a margin for a layout
 */
 /* 
-    Mixin to set a padding for a layout
+Mixin to set a padding for a layout
 */
 body {
   overflow-x: hidden;
@@ -193,16 +193,11 @@ body, body * {
   text-align: center;
 }
 
-.purple {
-  background: #440F4E;
-}
-
-.red {
-  background: #D5425E;
-}
-
-.yellow {
-  background: #FBB077;
+.sub-title {
+  /** calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) 
+      / ([maximum viewport width] - [minimum viewport width])));
+  **/
+  font-size: calc(12px + 12 * ((100vw - 300px) / 1300));
 }
 
 .title {
@@ -215,12 +210,20 @@ body, body * {
 }
 
 .sub-title {
-  /** calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) 
-      / ([maximum viewport width] - [minimum viewport width])));
-  **/
-  font-size: calc(12px + 12 * ((100vw - 300px) / 1300));
   color: #3f4450;
   opacity: 0.6;
+}
+
+.purple {
+  background: #440F4E;
+}
+
+.red {
+  background: #D5425E;
+}
+
+.yellow {
+  background: #FBB077;
 }
 
 .work:nth-child(even) {
@@ -414,6 +417,21 @@ html[lang=ar-sa] .text {
   align-items: flex-start;
   max-width: 380px;
 }
+@media only screen and (max-width: 601px) {
+  #workflow .item {
+    padding: 20px;
+  }
+}
+@media only screen and (min-width: 602px) {
+  #workflow .item {
+    padding: 60px 0px;
+  }
+}
+@media only screen and (min-width: 902px) {
+  #workflow .item {
+    padding: 80px;
+  }
+}
 #workflow .item:nth-child(even) {
   text-align: -webkit-left;
   text-align: -moz-left;
@@ -435,7 +453,10 @@ html[lang=ar-sa] .text {
   margin-left: auto;
 }
 #workflow .item .icon {
-  width: calc(50px *2);
+  /** calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) 
+      / ([maximum viewport width] - [minimum viewport width])));
+  **/
+  width: calc(60px + 40 * ((100vw - 300px) / 1300));
   margin-left: 20px;
   margin-top: 20px;
   align-self: flex-end;
@@ -450,6 +471,50 @@ html[lang=ar-sa] .text {
 }
 #workflow .item .text .title {
   color: #F6F6F6;
+}
+
+.main-cta {
+  background: #9FA8B3;
+  box-sizing: border-box;
+}
+@media only screen and (max-width: 601px) {
+  .main-cta {
+    padding: 0 0 auto;
+  }
+}
+@media only screen and (min-width: 602px) {
+  .main-cta {
+    padding: 0 60px;
+  }
+}
+@media only screen and (min-width: 902px) {
+  .main-cta {
+    padding: 0 80px;
+  }
+}
+.main-cta .stmt {
+  color: #F6F6F6;
+  /** calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) 
+      / ([maximum viewport width] - [minimum viewport width])));
+  **/
+  font-size: calc(12px + 12 * ((100vw - 300px) / 1300));
+}
+.main-cta span {
+  display: block;
+  text-align: right;
+}
+.main-cta button {
+  float: right;
+  margin-top: 20px;
+  padding: 0 60px;
+  background: transparent;
+  border: 2px solid #F6F6F6;
+  color: #F6F6F6;
+}
+.main-cta::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 nav {
