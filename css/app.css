@@ -124,6 +124,9 @@ a {
 /*// ************** //*/
 /*// ASSETS VARIABLES   //*/
 /*// ****************** //*/
+/*// ************** //*/
+/*// Media Brekpoint  //*/
+/*// ****************** //*/
 /* 
 Mixin to set a margin for a layout
 */
@@ -439,11 +442,6 @@ html[lang=ar-sa] .text {
   text-align: -ms-left;
   text-align: left;
 }
-@media only screen and (max-width: 600px) {
-  #workflow .item:nth-child(even) {
-    margin-left: auto;
-  }
-}
 #workflow .item:nth-child(odd) {
   text-align: -webkit-right;
   text-align: -moz-right;
@@ -456,7 +454,7 @@ html[lang=ar-sa] .text {
   /** calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) 
       / ([maximum viewport width] - [minimum viewport width])));
   **/
-  width: calc(60px + 40 * ((100vw - 300px) / 1300));
+  width: calc(40px + 60 * ((100vw - 300px) / 1300));
   margin-left: 20px;
   margin-top: 20px;
   align-self: flex-end;
@@ -471,6 +469,38 @@ html[lang=ar-sa] .text {
 }
 #workflow .item .text .title {
   color: #F6F6F6;
+  /** calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) 
+      / ([maximum viewport width] - [minimum viewport width])));
+  **/
+  font-size: calc(20px + 20 * ((100vw - 300px) / 1300));
+}
+#workflow .item .text .desc {
+  /** calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) 
+      / ([maximum viewport width] - [minimum viewport width])));
+  **/
+  font-size: calc(12px + 12 * ((100vw - 300px) / 1300));
+}
+@media only screen and (max-width: 768px) {
+  #workflow .item {
+    margin: auto;
+  }
+  #workflow .item .text {
+    align-self: center;
+    text-align: center;
+    margin: auto;
+  }
+  #workflow .item .icon {
+    align-self: center;
+    margin: auto;
+  }
+  #workflow .item:nth-child(odd) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  #workflow .item:nth-child(even) {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
 }
 
 .main-cta {
@@ -490,6 +520,11 @@ html[lang=ar-sa] .text {
 @media only screen and (min-width: 902px) {
   .main-cta {
     padding: 0 80px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .main-cta {
+    padding-top: 100px;
   }
 }
 .main-cta .stmt {

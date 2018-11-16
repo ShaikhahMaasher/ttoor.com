@@ -126,17 +126,12 @@ html[lang=ar-sa] {
         @include flex-container(column, center, flex-start);
         max-width: 380px;
         @include layout-padding(20px, $tablet-elm-margin 0px, $desk-elm-margin);
-
         &:nth-child(even) {
             text-align: -webkit-left;
             text-align: -moz-left;
             text-align: -o-left;
             text-align: -ms-left;
             text-align: left;
-
-            @include responsive('max', 600px) {
-                margin-left: auto;
-            }
         }
 
         &:nth-child(odd) {
@@ -149,7 +144,7 @@ html[lang=ar-sa] {
         }
 
         .icon {
-            @include size(width, 60px, 100px, $min-view, $max-view);
+            @include size(width, 40px, 100px, $min-view, $max-view);
             margin-left: 20px;
             margin-top: 20px;
             align-self: flex-end;
@@ -166,8 +161,32 @@ html[lang=ar-sa] {
 
             .title {
                 color: $off-white;
+                @include size(font-size,20px,40px,$min-view,$max-view);
+            }
+            .desc{
+                @include size(font-size,12px,24px,$min-view,$max-view);
             }
         }
+        @include responsive('max',$tablet){
+            margin: auto;
+            .text{
+               align-self:center;
+               text-align: center;
+               margin: auto;
+            }
+            .icon{
+                align-self:center;
+                margin:auto;
+            }
+            &:nth-child(odd) {
+               padding-top:100px;
+               padding-bottom: 100px;
+            }
+            &:nth-child(even) {
+                padding-top:0px;
+                padding-bottom:0px;
+             }
+       }
     }
 }
 
@@ -175,6 +194,9 @@ html[lang=ar-sa] {
     background: $grey;
     @include layout-padding(0 $mobile-elm-margin, 0 $tablet-elm-margin, 0 $desk-elm-margin);
     box-sizing: border-box;
+    @include responsive('max',$tablet){
+        padding-top: 100px;
+    }
     .stmt {
         color: $off-white;
         @include size(font-size, $min-sub-title, $max-sub-title, $min-view, $max-view);
