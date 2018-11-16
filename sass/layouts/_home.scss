@@ -1,10 +1,22 @@
+#works {
+    button {
+        @include btn(0 30px, transparent, 2px solid $white-grey, $white-grey);
+        margin-top: 20px;
+    }
+}
 .work {
     &:nth-child(even) {
         @include flex-container(row, flex-start, center);
+        @include responsive(max, $tablet) {
+            flex-direction: column-reverse;
+        }
     }
 
     &:nth-child(odd) {
         @include flex-container(row-reverse, flex-start, center);
+        @include responsive(max, $tablet) {
+            flex-direction: column-reverse;
+        }
     }
 
     .text {
@@ -14,12 +26,19 @@
 
     .desc {
         padding-bottom: 20px;
+        @include size(font-size, $min-sub-title, $max-sub-title, $min-view, $max-view);
     }
 
     .media {
         flex-basis: 50%;
         margin-right: auto;
         padding: 120px 0;
+        @include responsive(max, $tablet) {
+            padding-bottom: 0;
+            margin: 0 auto;
+            display: inline-block;
+            width: 80%;
+        }
     }
 }
 
@@ -163,7 +182,6 @@ html[lang=ar-sa] {
             color: $off-white;
             margin-top: -50px;
             max-width: 300px;
-
             .title {
                 color: $off-white;
             }

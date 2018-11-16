@@ -24,8 +24,8 @@ $tablet-nav-margin: 10px;
 $mobile-nav-margin: 5px;
 
 $desk-elm-margin: 80px; 
-$tablet-elm-margin: 60px; 
-$mobile-elm-margin: 0 auto; 
+$tablet-elm-margin: 20px 60px; 
+$mobile-elm-margin: 20px; 
 
 
 $max-view: 1600px;
@@ -48,3 +48,12 @@ $min-sub-title: 12px;
 
 // Image Size
 $icon-size: 50px;
+
+$four-k:2560px;
+$laptop-l:1440px;
+$laptop:1024px;
+$tablet:768px;
+$tablet-s:601px;
+$mobile-l:425px;
+$mobile-m:375px;
+$mobile-s:320px;

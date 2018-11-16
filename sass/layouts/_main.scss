@@ -13,7 +13,7 @@
 }
 
 .cta-btn {
-    @extend %rounded-shape
+    @extend %rounded-shape;
 }
 
 %rounded-shape {
