@@ -498,4 +498,60 @@ html[lang=ar-sa] nav {
   flex-direction: row-reverse;
 }
 
+#footer {
+  background: #3f4450;
+  color: #F6F6F6;
+}
+@media only screen and (max-width: 601px) {
+  #footer {
+    padding: 5px;
+  }
+}
+@media only screen and (min-width: 602px) {
+  #footer {
+    padding: 10px;
+  }
+}
+@media only screen and (min-width: 902px) {
+  #footer {
+    padding: 15px;
+  }
+}
+#footer ul {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+@media only screen and (max-width: 600px) {
+  #footer ul {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+}
+#footer .copyright {
+  font-size: 16px;
+  color: #9FA8B3;
+}
+#footer .social ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+#footer .social-item {
+  width: calc((50px/2) + 5px);
+  margin-right: 5px;
+  margin-top: 10px;
+  flex: 1;
+}
+#footer .social-item svg {
+  fill: #9FA8B3;
+}
+#footer .social-item svg path {
+  fill: #F6F6F6;
+}
+
 /*# sourceMappingURL=app.css.map */
