@@ -217,15 +217,15 @@ body, body * {
   opacity: 0.6;
 }
 
-.purple {
+.color-purple {
   background: #440F4E;
 }
 
-.red {
+.color-red {
   background: #D5425E;
 }
 
-.yellow {
+.color-yellow {
   background: #FBB077;
 }
 
@@ -580,6 +580,13 @@ html[lang=ar-sa] .text {
   content: "";
   clear: both;
   display: table;
+}
+
+.page-wrapper {
+  -webkit-transition: background-color 0.4s ease-out;
+  -moz-transition: background-color 0.4s ease-out;
+  -o-transition: background-color 0.4s ease-out;
+  transition: background-color 0.4s ease-out;
 }
 
 nav {
