@@ -34,7 +34,6 @@ html
                                     div.tag php
                                 p.desc.anime.fade-up منصة تجارة الكترونية منصة تجارة الكترونية منصة تجارة الكترونية منصة تجارة الكترونية منصة تجارة الكترونية منصة تجارة الكترونية
                                 button.cta-btn.anime.fade-up شاهد المزيد   
-                                    //- include ./assets/images/icons/left-arrow.jade  
                             div.media
                                 include ./assets/images/browser-img.jade
                         div.work(data-color="purple")
@@ -66,27 +65,30 @@ html
                             p.sub-title.stmt اطلع على تطبيقنا لمشاريع الويب من بداية الفكرة إلى التصميم ثم التطوير انتهاءاً بنشر المشروع على الويب
                             button.cta-btn شاهد جميع أعمالنا
                     section#workflow
-                        div(data-parallax='{"scale":0.66, "y": -100}').item
+                        div.header
+                            h1.title كيف نعمل في طور
+                            p.stmt  عند تطوير أي مشروع، يتم العمل عبر مراحل أساسية لضمان الجودة وقابلية التطوير
+                        div(data-parallax='{"scale":0.66}').item
                             div.icon.anime.text-right   
                                 include ./assets/images/workflow/planning.jade
                             div.text
                                 h1.title.anime.text-right مرحلة التخطيط
                                 p.desc.anime.text-right بهذه المرحلة يتم التخطيط وجمع البيانات  
-                        div(data-parallax='{"scale":0.66, "y": -100}').item
+                        div(data-parallax='{"scale":0.66}').item
                             div.icon.anime.text-right  
                                 include ./assets/images/workflow/analysis.jade
                             div.text
                                 h1.title.anime.text-right مرحلة التصميم
                                 p.desc.anime.text-right بهذه المرحلة يتم التخطيط وجمع البيانات
-                        div(data-parallax='{"scale":0.66, "y": -100}').item
+                        div(data-parallax='{"scale":0.66}').item
                             div.icon.anime.text-right   
                                 include ./assets/images/workflow/dev.jade
                             div.text
                                 h1.title.anime.text-right مرحلة التطوير
                                 p.desc.anime.text-right  بهذه المرحلة يتم التخطيط وجمع البيانات     
-                        div(data-parallax='{"scale":0.66, "y": -100}').item
+                        div(data-parallax='{"scale":0.66}').item
                             div.icon.anime.text-right   
-                                include ./assets/images/workflow/lunch.jade
+                                include ./assets/images/workflow/testing.jade
                             div.text
                                 h1.title.anime.text-right مرحلة الاختبار والنشر
                                 p.desc.anime.text-right  بهذه المرحلة يتم التخطيط وجمع البيانات                   
@@ -104,19 +106,19 @@ html
                             ul
                                 li.social-item 
                                     a(href="#")
-                                        include ./assets/images/linkedin-icon.jade
+                                        include ./assets/images/icons/social/linkedin-icon.jade
                                 li.social-item
                                      a(href="#")
-                                        include ./assets/images/twitter-icon.jade
+                                        include ./assets/images/icons/social/twitter-icon.jade
                                 li.social-item
                                      a(href="#")
-                                        include ./assets/images/email-icon.jade
+                                        include ./assets/images/icons/social/email-icon.jade
                                  li.social-item
                                      a(href="#")
-                                        include ./assets/images/phone-icon.jade
+                                        include ./assets/images/icons/social/phone-icon.jade
                                  li.social-item
                                      a(href="#")
-                                        include ./assets/images/instagram-icon.jade
+                                        include ./assets/images/icons/social/instagram-icon.jade
 
             script(src="js/lib/wow.min.js")
             script(src="js/lib/jquery-2.1.3.min.js")

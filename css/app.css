@@ -270,6 +270,9 @@ body, body * {
   background: #FBB077;
 }
 
+#works {
+  margin-bottom: 150px;
+}
 #works button {
   padding: 0 30px;
   background: transparent;
@@ -459,9 +462,10 @@ html[lang=ar-sa] .text {
 /*// WORKFLOW STYLE //*/
 /*// ************** //*/
 #workflow {
+  position: relative;
   width: 100%;
   text-align: center;
-  background: #9FA8B3;
+  background: transparent;
   box-sizing: border-box;
 }
 @media only screen and (max-width: 601px) {
@@ -479,7 +483,14 @@ html[lang=ar-sa] .text {
     padding: 80px;
   }
 }
+#workflow .header {
+  position: relative;
+  text-align: center;
+  margin-top: 350px;
+}
 #workflow .item {
+  position: relative;
+  z-index: 2;
   text-align: -webkit-left;
   text-align: -moz-left;
   text-align: -o-left;
@@ -525,13 +536,37 @@ html[lang=ar-sa] .text {
   /** calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) 
       / ([maximum viewport width] - [minimum viewport width])));
   **/
-  width: calc(40px + 60 * ((100vw - 300px) / 1300));
+  width: calc(60px + 60 * ((100vw - 300px) / 1300));
   margin-left: 20px;
   margin-top: 20px;
   align-self: flex-end;
 }
-#workflow .item .icon svg {
-  fill: #D5425E;
+#workflow .item .icon svg#planning {
+  fill: rgba(48, 166, 164, 0.5);
+}
+#workflow .item .icon svg#planning .icon {
+  fill: #30A6A4;
+}
+#workflow .item .icon svg#analysis {
+  fill: rgba(251, 176, 119, 0.6);
+}
+#workflow .item .icon svg#analysis .st0 {
+  fill: rgba(251, 176, 119, 0.6);
+}
+#workflow .item .icon svg#analysis .icon {
+  fill: #FBB077;
+}
+#workflow .item .icon svg#dev {
+  fill: rgba(43, 13, 157, 0.5);
+}
+#workflow .item .icon svg#dev .icon {
+  fill: #2B0D9D;
+}
+#workflow .item .icon svg#testing {
+  fill: rgba(245, 57, 71, 0.5);
+}
+#workflow .item .icon svg#testing .icon {
+  fill: #F53947;
 }
 #workflow .item .text {
   color: #F6F6F6;
@@ -574,9 +609,24 @@ html[lang=ar-sa] .text {
   }
 }
 #workflow::before {
+  content: url(../../assets/images/workflow/road-start.svg);
   position: absolute;
-  width: 400px;
-  color: #091220;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 0;
+}
+#workflow::after {
+  content: url(../../assets/images/workflow/road-end.svg);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: auto;
+  width: 100%;
+  z-index: 0;
+  margin-top: 600px;
 }
 
 .main-cta {

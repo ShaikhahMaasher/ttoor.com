@@ -1,0 +1,31 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="-92 183.3 426.7 426.7" style="enable-background:new -92 183.3 426.7 426.7;" xml:space="preserve">
+<style type="text/css">
+	.st0{clip-path:url(#SVGID_2_);}
+	.st1{clip-path:url(#SVGID_4_);}
+	.st2{fill:#F05228;}
+</style>
+<g>
+	<g>
+		<defs>
+			<rect id="SVGID_1_" x="-92" y="183.3" width="426.7" height="426.7"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+		</clipPath>
+		<g class="st0">
+			<defs>
+				<rect id="SVGID_3_" x="-92" y="282.3" width="426.7" height="428"/>
+			</defs>
+			<clipPath id="SVGID_4_">
+				<use xlink:href="#SVGID_3_"  style="overflow:visible;"/>
+			</clipPath>
+			<g class="st1">
+				<path class="st2" d="M-123,397.7c-53,68.6,35,215.3,216.9,208c78.2-3.1,101.8-9.6,168.2-24.5c23.4-6.7,43.6-12.7,60.9-18.4
+					c128.2-41,102.1-51.9,102.1-51.9s83-121.8-67.1-274.8c-23.4-23.8-178.5,18.3-214,12C-120.3,218.6-353.6,295.7-123,397.7z"/>
+			</g>
+		</g>
+	</g>
+	<rect x="-92" y="183.3" class="st2" width="426.7" height="133"/>
+</g>
+</svg>

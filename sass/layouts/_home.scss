@@ -1,12 +1,15 @@
 #works {
+    margin-bottom: 150px;
     button {
         @include btn(0 30px, transparent, 2px solid $white-grey, $white-grey);
         margin-top: 20px;
     }
 }
+
 .work {
     &:nth-child(even) {
         @include flex-container(row, flex-start, center);
+
         @include responsive(max, $tablet) {
             flex-direction: column-reverse;
         }
@@ -14,6 +17,7 @@
 
     &:nth-child(odd) {
         @include flex-container(row-reverse, flex-start, center);
+
         @include responsive(max, $tablet) {
             flex-direction: column-reverse;
         }
@@ -33,6 +37,7 @@
         flex-basis: 50%;
         margin-right: auto;
         padding: 120px 0;
+
         @include responsive(max, $tablet) {
             padding-bottom: 0;
             margin: 0 auto;
@@ -130,13 +135,20 @@ html[lang=ar-sa] {
 /*// WORKFLOW STYLE //*/
 /*// ************** //*/
 #workflow {
+    position: relative;
     width: 100%;
     text-align: center;
-    background: $grey;
+    background: transparent;
     box-sizing: border-box;
     @include layout-padding($mobile-elm-margin, $tablet-elm-margin, $desk-elm-margin);
-
+    .header {
+        position: relative;
+        text-align: center;
+        margin-top: 350px;
+    }
     .item {
+        position: relative;
+        z-index: 2;
         text-align: -webkit-left;
         text-align: -moz-left;
         text-align: -o-left;
@@ -145,6 +157,7 @@ html[lang=ar-sa] {
         @include flex-container(column, center, flex-start);
         max-width: 380px;
         @include layout-padding(20px, $tablet-elm-margin 0px, $desk-elm-margin);
+
         &:nth-child(even) {
             text-align: -webkit-left;
             text-align: -moz-left;
@@ -163,13 +176,40 @@ html[lang=ar-sa] {
         }
 
         .icon {
-            @include size(width, 40px, 100px, $min-view, $max-view);
+            @include size(width, 60px, 120px, $min-view, $max-view);
             margin-left: 20px;
             margin-top: 20px;
             align-self: flex-end;
 
-            svg {
-                fill: $paper-red;
+            svg#planning {
+                fill: $paper-terq-rgba;
+                .icon {
+                    fill: $paper-terq;
+                }
+            }
+
+            svg#analysis {
+                fill: $paper-yellow-rgba;
+                .st0 {
+                    fill: $paper-yellow-rgba;                    
+                }
+                .icon {
+                    fill: $paper-yellow;
+                }
+            }
+
+            svg#dev {
+                fill: $blue-purple-rgba;
+                .icon {
+                    fill: $blue-purple;
+                }
+            }
+
+            svg#testing {
+                fill: $paper-orange-rgba;
+                .icon {
+                    fill: $paper-orange;
+                }
             }
         }
 
@@ -177,40 +217,62 @@ html[lang=ar-sa] {
             color: $off-white;
             margin-top: -50px;
             max-width: 300px;
+
             .title {
                 color: $off-white;
-                @include size(font-size,20px,40px,$min-view,$max-view);
+                @include size(font-size, 20px, 40px, $min-view, $max-view);
             }
-            .desc{
-                @include size(font-size,12px,24px,$min-view,$max-view);
+
+            .desc {
+                @include size(font-size, 12px, 24px, $min-view, $max-view);
             }
         }
-        @include responsive('max',$tablet){
+
+        @include responsive('max', $tablet) {
             margin: auto;
-            .text{
-               align-self:center;
-               text-align: center;
-               margin: auto;
+
+            .text {
+                align-self: center;
+                text-align: center;
+                margin: auto;
             }
-            .icon{
-                align-self:center;
-                margin:auto;
+
+            .icon {
+                align-self: center;
+                margin: auto;
             }
+
             &:nth-child(odd) {
-               padding-top:100px;
-               padding-bottom: 100px;
+                padding-top: 100px;
+                padding-bottom: 100px;
             }
+
             &:nth-child(even) {
-                padding-top:0px;
-                padding-bottom:0px;
-             }
-       }
+                padding-top: 0px;
+                padding-bottom: 0px;
+            }
+        }
     }
-    &::before{
+
+    &::before {
+        content: url(../../assets/images/workflow/road-start.svg);
         position: absolute;
-        width: 400px;
-    //    background-image: url('./assets/images/workflow/strat-road.svg');
-        color: $black;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 0;
+    }
+    &::after {
+        content: url(../../assets/images/workflow/road-end.svg);
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: auto;
+        width: 100%;
+        z-index: 0;
+        margin-top: 600px;
     }
 }
 
@@ -218,23 +280,28 @@ html[lang=ar-sa] {
     background: $grey;
     @include layout-padding(0 $mobile-elm-margin, 0 $tablet-elm-margin, 0 $desk-elm-margin);
     box-sizing: border-box;
-    @include responsive('max',$tablet){
+
+    @include responsive('max', $tablet) {
         padding-top: 100px;
     }
+
     .stmt {
         color: $off-white;
         @include size(font-size, $min-sub-title, $max-sub-title, $min-view, $max-view);
     }
+
     span {
         display: block;
         text-align: right;
     }
+
     button {
         float: right;
         margin-top: 20px;
         @include btn(0 60px, transparent, 2px solid $off-white, $off-white);
     }
-    &::after{
+
+    &::after {
         content: "";
         clear: both;
         display: table;
@@ -246,6 +313,7 @@ html[lang=ar-sa] {
     -webkit-animation-name: textLeft;
     animation-name: textLeft;
 }
+
 .text-right {
     -webkit-animation-name: textRight;
     animation-name: textRight;
