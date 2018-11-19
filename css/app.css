@@ -573,6 +573,11 @@ html[lang=ar-sa] .text {
     padding-bottom: 0px;
   }
 }
+#workflow::before {
+  position: absolute;
+  width: 400px;
+  color: #091220;
+}
 
 .main-cta {
   background: #9FA8B3;

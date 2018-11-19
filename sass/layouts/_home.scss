@@ -206,6 +206,12 @@ html[lang=ar-sa] {
              }
        }
     }
+    &::before{
+        position: absolute;
+        width: 400px;
+    //    background-image: url('./assets/images/workflow/strat-road.svg');
+        color: $black;
+    }
 }
 
 .main-cta {
@@ -250,7 +256,7 @@ html[lang=ar-sa] {
     animation-name: fadeUp;
 }
 
-.page-wrapper{
+.page-wrapper {
     -webkit-transition: background-color .4s ease-out;
     -moz-transition: background-color .4s ease-out;
     -o-transition: background-color .4s ease-out;

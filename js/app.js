@@ -24,7 +24,8 @@ anime.init();
 window.addEventListener('scroll', function () {
     var $body = document.querySelector('.page-wrapper');
     var $works = document.querySelectorAll('.work');
-     //Back to defualt value
+    
+    //Back to defualt value
     $body.classList.forEach(className => {
         if (className.startsWith('color-')) {
             $body.classList.remove(className);
