@@ -249,3 +249,10 @@ html[lang=ar-sa] {
     -webkit-animation-name: fadeUp;
     animation-name: fadeUp;
 }
+
+.page-wrapper{
+    -webkit-transition: background-color .4s ease-out;
+    -moz-transition: background-color .4s ease-out;
+    -o-transition: background-color .4s ease-out;
+    transition: background-color .4s ease-out;
+}
