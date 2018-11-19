@@ -234,3 +234,18 @@ html[lang=ar-sa] {
         display: table;
     }
 }
+
+// Animation
+.text-left {
+    -webkit-animation-name: textLeft;
+    animation-name: textLeft;
+}
+.text-right {
+    -webkit-animation-name: textRight;
+    animation-name: textRight;
+}
+
+.fade-up {
+    -webkit-animation-name: fadeUp;
+    animation-name: fadeUp;
+}

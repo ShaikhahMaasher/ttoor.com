@@ -127,6 +127,47 @@ a {
 /*// ************** //*/
 /*// Media Brekpoint  //*/
 /*// ****************** //*/
+@keyframes textLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.35, 0.25) rotateX(15deg) rotateZ(20deg) translateY(150px) translateX(-50px);
+    transform: scale(0.35, 0.25) rotateX(15deg) rotateZ(20deg) translateY(150px) translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1) rotateX(0deg) rotateZ(0deg) translateY(0) translateX(0);
+    transform: scale(1, 1) rotateX(0deg) rotateZ(0deg) translateY(0) translateX(0);
+  }
+}
+@keyframes textRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.35, 0.25) rotateX(-15deg) rotateZ(20deg) translateY(-150px) translateX(20px);
+    transform: scale(0.35, 0.25) rotateX(-15deg) rotateZ(20deg) translateY(-150px) translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1) rotateX(0deg) rotateZ(0deg) translateY(0) translateX(0);
+    transform: scale(1, 1) rotateX(0deg) rotateZ(0deg) translateY(0) translateX(0);
+  }
+}
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(150px);
+    transform: translateY(150px);
+  }
+  50% {
+    opacity: 0.6;
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
 /* 
 Mixin to set a margin for a layout
 */
@@ -580,6 +621,21 @@ html[lang=ar-sa] .text {
   content: "";
   clear: both;
   display: table;
+}
+
+.text-left {
+  -webkit-animation-name: textLeft;
+  animation-name: textLeft;
+}
+
+.text-right {
+  -webkit-animation-name: textRight;
+  animation-name: textRight;
+}
+
+.fade-up {
+  -webkit-animation-name: fadeUp;
+  animation-name: fadeUp;
 }
 
 nav {
