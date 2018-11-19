@@ -746,6 +746,43 @@ html[lang=ar-sa] nav {
   flex-direction: row-reverse;
 }
 
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 4;
+  left: 0;
+  top: 0;
+  right: 0;
+  background-color: #440F4E;
+  overflow-x: hidden;
+}
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #F6F6F6;
+  opacity: 0.6;
+  display: block;
+}
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay-content {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
 #footer {
   background: #3f4450;
   color: #F6F6F6;
