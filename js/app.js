@@ -12,19 +12,12 @@ anime = new WOW (
 anime.init();
 // new WOW().init();
 
-// Calculate widow height
-function setHeroHeight() {
-    var hero = document.querySelector('#hero');
-    hero.style.height = getWindowHeight;
-}
-setHeroHeight();
-
-
 // Change background color based on work section color
 window.addEventListener('scroll', function () {
     var $body = document.querySelector('.page-wrapper');
     var $works = document.querySelectorAll('.work');
-     //Back to defualt value
+    
+    //Back to defualt value
     $body.classList.forEach(className => {
         if (className.startsWith('color-')) {
             $body.classList.remove(className);
