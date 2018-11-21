@@ -1,0 +1,28 @@
+doctype html
+html(lang="ar-sa")
+html
+    head 
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        block title
+        link(href="//daneden.github.io/animate.css/animate.min.css", rel="stylesheet", type="text/css")
+        link(href="css/app.css", rel="stylesheet", type="text/css")
+        block stylesheet
+    body
+            div.page-wrapper
+                //- Header
+                header#header
+                    include ./components/_navbar.jade
+
+                //- Main content
+                block main
+
+                //- Footer
+                footer#footer
+                    include ./components/_footer.jade 
+            //- Scripts
+            script(src="js/lib/wow.min.js")
+            script(src="js/lib/jquery-2.1.3.min.js")
+            script(src="js/lib/jquery.parallax-scroll.js")
+            script(src="js/app.js")

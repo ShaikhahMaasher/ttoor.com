@@ -1,0 +1,32 @@
+
+.main-cta {
+    background: $grey;
+    @include layout-padding(0 $mobile-elm-margin, 0 $tablet-elm-margin, 0 $desk-elm-margin);
+    box-sizing: border-box;
+
+    @include responsive('max', $tablet) {
+        padding-top: 100px;
+    }
+
+    .stmt {
+        color: $off-white;
+        @include size(font-size, $min-sub-title, $max-sub-title, $min-view, $max-view);
+    }
+
+    span {
+        display: block;
+        text-align: right;
+    }
+
+    button {
+        float: right;
+        margin-top: 20px;
+        @include btn(0 60px, transparent, 2px solid $off-white, $off-white);
+    }
+
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}

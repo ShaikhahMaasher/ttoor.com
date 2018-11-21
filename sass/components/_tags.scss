@@ -1,0 +1,11 @@
+
+.tags {
+    @include flex-container(row-reverse, flex-start, flex-start);
+    @extend %padding-text;
+
+    .tag {
+        background: rgba(255, 255, 255, 0.3);
+        font-size: 14px;
+        @extend %rounded-shape;
+    }
+}

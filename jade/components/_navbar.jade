@@ -1,0 +1,13 @@
+- var path = "../../assets/images"
+nav
+    div.logo
+        img(src="assets/images/dumy-logo.png", alt="ttoor")
+    div(onclick="openNav()").menu-bar
+        include ../../assets/images/menu-icon.jade
+div#nav.overlay
+    a(href="javascript:void(0)", onclick="closeNav()").close-btn &times;
+    div.overlay-content
+        a(href="#") about
+        a(href="#") about
+        a(href="#") about
+        a(href="#") about

@@ -54,3 +54,35 @@
 .color-yellow {
     background: $paper-yellow;
 }
+
+
+// Assign Animation 
+.text-left {
+    -webkit-animation-name: textLeft;
+    animation-name: textLeft;
+}
+
+.text-right {
+    -webkit-animation-name: textRight;
+    animation-name: textRight;
+}
+
+.fade-up {
+    -webkit-animation-name: fadeUp;
+    animation-name: fadeUp;
+}
+
+.page-wrapper {
+    -webkit-transition: background-color .4s ease-out;
+    -moz-transition: background-color .4s ease-out;
+    -o-transition: background-color .4s ease-out;
+    transition: background-color .4s ease-out;
+}
+
+html[lang=ar-sa] {
+    .text {
+        text-align: right;
+    }
+}
+
+
