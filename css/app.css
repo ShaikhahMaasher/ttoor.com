@@ -626,7 +626,7 @@ html[lang=ar] .text {
   -moz-transition: all 350ms cubic-bezier(0.77, 0, 0.175, 1);
   -o-transition: all 350ms cubic-bezier(0.77, 0, 0.175, 1);
   background-color: transparent;
-  background-image: url(../img/form/icon-selected.png);
+  background-image: url(/assets/images/contact/icon-selected.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 0% 0%;
@@ -638,6 +638,7 @@ html[lang=ar] .text {
   padding-top: 50%;
   border-radius: 50%;
   border: 1px solid #e4e7f5;
+  cursor: pointer;
 }
 .form-icon img {
   transition: all 350ms cubic-bezier(0.77, 0, 0.175, 1);
@@ -666,8 +667,60 @@ html[lang=ar] .text {
   text-transform: uppercase;
 }
 
+.step-number {
+  font-size: 0.85em;
+  color: #9FA8B3;
+  margin-bottom: 2em;
+}
+.step-number strong {
+  font-weight: bold;
+  color: #091220;
+}
+
 html[lang=ar] #form-options .options {
   flex-direction: row-reverse;
+}
+
+.slider-input {
+  background-color: transparent;
+  /** calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) 
+      / ([maximum viewport width] - [minimum viewport width])));
+  **/
+  font-size: calc(24px + 26 * ((100vw - 300px) / 1300));
+  color: #3f4450;
+  max-width: 100%;
+  text-align: center;
+  height: auto;
+  line-height: 1em;
+}
+
+.slider-caption {
+  color: #3f4450;
+  font-weight: 600;
+  /** calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) 
+      / ([maximum viewport width] - [minimum viewport width])));
+  **/
+  font-size: calc(12px + 12 * ((100vw - 300px) / 1300));
+  letter-spacing: 0.15em;
+  margin: 3em 0 0;
+  text-transform: uppercase;
+}
+
+.option.selected .form-icon {
+  transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  background-color: #D6372E;
+  background-size: 35% 35%;
+}
+.option.selected img {
+  opacity: 0;
+}
+
+.contact {
+  background: white;
 }
 
 nav {
@@ -890,6 +943,122 @@ html[lang=ar] nav {
 .tags .tag {
   background: rgba(255, 255, 255, 0.3);
   font-size: 14px;
+}
+
+.noUi-target, .noUi-target * {
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-select: none;
+  -ms-touch-action: none;
+  touch-action: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.noUi-target {
+  position: relative;
+  direction: rtl;
+}
+
+.noUi-horizontal {
+  height: 5px;
+  margin-top: 2.5em;
+}
+
+.noUi-target {
+  background: #e4e7f5;
+  border-radius: 4px;
+}
+
+.noUi-base, .noUi-connects {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.noUi-connects {
+  overflow: hidden;
+  z-index: 0;
+}
+
+.noUi-connects {
+  border-radius: 3px;
+}
+
+.noUi-connect, .noUi-origin {
+  will-change: transform;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  -ms-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+.noUi-horizontal .noUi-origin {
+  height: 0;
+}
+
+.noUi-handle {
+  position: absolute;
+  transition: all 350ms cubic-bezier(0.77, 0, 0.175, 1);
+  -webkit-transition: all 350ms cubic-bezier(0.77, 0, 0.175, 1);
+  -moz-transition: all 350ms cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: all 350ms cubic-bezier(0.77, 0, 0.175, 1);
+  border-radius: 50%;
+  background: #D6372E;
+  cursor: pointer;
+  -webkit-box-shadow: 0 7px 18px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 7px 18px 0px rgba(0, 0, 0, 0.15);
+}
+
+.noUi-horizontal .noUi-handle {
+  width: 60px;
+  height: 60px;
+  top: -30px;
+  outline: none;
+}
+
+.noUi-handle:before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  background: transparent url(/assets/images/contact/ui-slider-left.svg) no-repeat;
+  background-size: contain;
+  left: 40%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.noUi-handle:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  background: transparent url(/assets/images/contact/ui-slider-right.svg) no-repeat;
+  background-size: contain;
+  left: 70%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -3,7 +3,7 @@ extends ./jade/master.jade
 block title 
     title ttoor | Contact
 block main
-    main#main-content
+    main#main-content.contact
         section#form-options
             div.header 
                 span.caption Let's Start
@@ -18,37 +18,54 @@ block main
                         img(src="./assets/images/contact/icon-chat.svg" alt="chat")
                     h2 شات
         section#project
-                nav.form-steps
+                div.form-steps
                     ul
                         li
-                            a(href="#project-setp-1" )
+                            a(href="#project-setp-1" ).active 01
                         li
-                            a(href="#project-setp-2" )
+                            a(href="#project-setp-2" ) 02
                         li
-                            a(href="#project-setp-3" )
+                            a(href="#project-setp-3" ) 03
                         li
-                            a(href="#project-setp-4" )
+                            a(href="#project-setp-4" ) 04
                 form(action="", method="post")
                     div#project-setp-1.step
                         div.header
                             div.step-number
                                 strong 01
-                                &nbsp;—04
-                            h1.title what do you need ?
+                                &nbsp;— 04
+                            h1.title What do you need ?
                         div.options
                             div.option(data-option="full-stack")
                                 figure.form-icon
-                                    img(src="./assets/images/icons/contact/full-stack.svg", alt="")
-                                h2  full stack
+                                    img(src="./assets/images/contact/full-stack.svg", alt="full stcak")
+                                h2  Develope full Stack
                             div.option(data-option="front-end")
                                 figure.form-icon
-                                    img(src="./assets/images/icons/contact/front-end.svg", alt="")
-                                h2  front end
-                            div#full-stack 
-                                    figure.form-icon
-                                        img(src="./assets/images/icons/contact/front-end.svg", alt="")
-                                    h2  front end
-                                div.option
-                            div#front-end
-        
+                                    img(src="./assets/images/contact/front-end.svg", alt=" front end")
+                                h2  Develope front end
+                             div.option(data-option="front-end")
+                                figure.form-icon
+                                    img(src="./assets/images/contact/both-icon.svg", alt=" front end")
+                                h2  Design and Develope front end
+                            input(type="hidden", name="sub-catgeory").input-form
+                    div#project-setp-2.step
+                        div.header
+                            div.step-number
+                                strong 02
+                                &nbsp;— 04
+                            h1.title Budget and Timeline
+                            p.desc Time is the most valuable non-renewable resource we have. This dictates how much time we can put forth to make dreams reality.
+                        div.sliders
+                            div.budget-slider
+                            p.slider-caption Approximate budget
+                            input(type="text" name="budget" readonly).slider-input.budget-input
+                            div.time-slider
+                            p.slider-caption ESTIMATED TIMELINE
+                            input(type="text" name="time" readonly).slider-input.time-input
+
+                                    
+
+                                
+
         section#chat
