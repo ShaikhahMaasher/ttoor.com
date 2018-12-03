@@ -18,5 +18,37 @@ block main
                         img(src="./assets/images/contact/icon-chat.svg" alt="chat")
                     h2 شات
         section#project
+                nav.form-steps
+                    ul
+                        li
+                            a(href="#project-setp-1" )
+                        li
+                            a(href="#project-setp-2" )
+                        li
+                            a(href="#project-setp-3" )
+                        li
+                            a(href="#project-setp-4" )
+                form(action="", method="post")
+                    div#project-setp-1.step
+                        div.header
+                            div.step-number
+                                strong 01
+                                &nbsp;—04
+                            h1.title what do you need ?
+                        div.options
+                            div.option(data-option="full-stack")
+                                figure.form-icon
+                                    img(src="./assets/images/icons/contact/full-stack.svg", alt="")
+                                h2  full stack
+                            div.option(data-option="front-end")
+                                figure.form-icon
+                                    img(src="./assets/images/icons/contact/front-end.svg", alt="")
+                                h2  front end
+                            div#full-stack 
+                                    figure.form-icon
+                                        img(src="./assets/images/icons/contact/front-end.svg", alt="")
+                                    h2  front end
+                                div.option
+                            div#front-end
         
         section#chat

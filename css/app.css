@@ -608,17 +608,16 @@ html[lang=ar] .text {
 
 #form-options {
   padding-top: 8vh;
-  height: 92vh;
+  height: 100vh;
   text-align: center;
 }
 #form-options .options {
   display: flex;
   justify-content: center;
-  margin-top: 8vh;
 }
 #form-options .options .option {
-  flex-basis: 41.66666667%;
-  max-width: 41.66666667%;
+  flex-basis: 50%;
+  max-width: 50%;
 }
 
 .form-icon {
@@ -633,10 +632,10 @@ html[lang=ar] .text {
   background-size: 0% 0%;
   position: relative;
   display: block;
-  width: 74%;
-  margin: 0 13% 0.75em;
+  width: 50%;
+  margin: 0 auto;
   height: auto;
-  padding-top: 70%;
+  padding-top: 50%;
   border-radius: 50%;
   border: 1px solid #e4e7f5;
 }
