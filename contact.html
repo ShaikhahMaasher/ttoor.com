@@ -29,7 +29,7 @@
           <div class="overlay-content"><a href="#">about</a><a href="#">about</a><a href="#">about</a><a href="#">about</a></div>
         </div>
       </header>
-      <main id="main-content">
+      <main id="main-content" class="contact">
         <section id="form-options">
           <div class="header"> <span class="caption">Let's Start</span>
             <h1 class="title">How can we help you?</h1>
@@ -45,7 +45,54 @@
             </div>
           </div>
         </section>
-        <section id="project"></section>
+        <section id="project">
+          <div class="form-steps">
+            <ul>
+              <li><a href="#project-setp-1" class="active">01</a></li>
+              <li><a href="#project-setp-2">02</a></li>
+              <li><a href="#project-setp-3">03</a></li>
+              <li><a href="#project-setp-4">04</a></li>
+            </ul>
+          </div>
+          <form action="" method="post">
+            <div id="project-setp-1" class="step">
+              <div class="header">
+                <div class="step-number"><strong>01</strong>&nbsp;— 04</div>
+                <h1 class="title">What do you need ?</h1>
+              </div>
+              <div class="options">
+                <div data-option="full-stack" class="option">
+                  <figure class="form-icon"><img src="./assets/images/contact/full-stack.svg" alt="full stcak"></figure>
+                  <h2> Develope full Stack</h2>
+                </div>
+                <div data-option="front-end" class="option">
+                  <figure class="form-icon"><img src="./assets/images/contact/front-end.svg" alt=" front end"></figure>
+                  <h2> Develope front end</h2>
+                </div>
+                <div data-option="front-end" class="option">
+                  <figure class="form-icon"><img src="./assets/images/contact/both-icon.svg" alt=" front end"></figure>
+                  <h2> Design and Develope front end</h2>
+                </div>
+                <input type="hidden" name="sub-catgeory" class="input-form">
+              </div>
+            </div>
+            <div id="project-setp-2" class="step">
+              <div class="header">
+                <div class="step-number"><strong>02</strong>&nbsp;— 04</div>
+                <h1 class="title">Budget and Timeline</h1>
+                <p class="desc">Time is the most valuable non-renewable resource we have. This dictates how much time we can put forth to make dreams reality.</p>
+              </div>
+              <div class="sliders">
+                <div class="budget-slider"></div>
+                <p class="slider-caption">Approximate budget</p>
+                <input type="text" name="budget" readonly class="slider-input budget-input">
+                <div class="time-slider"></div>
+                <p class="slider-caption">ESTIMATED TIMELINE</p>
+                <input type="text" name="time" readonly class="slider-input time-input">
+              </div>
+            </div>
+          </form>
+        </section>
         <section id="chat"></section>
       </main>
       <footer id="footer">
@@ -88,6 +135,8 @@
     <script src="js/lib/wow.min.js"></script>
     <script src="js/lib/jquery-2.1.3.min.js"></script>
     <script src="js/lib/jquery.parallax-scroll.js"></script>
+    <script src="js/lib/wNumb.js"></script>
+    <script src="js/lib/nouislider.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>
