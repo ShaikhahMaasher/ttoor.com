@@ -29,23 +29,26 @@
           <div class="overlay-content"><a href="#">about</a><a href="#">about</a><a href="#">about</a><a href="#">about</a></div>
         </div>
       </header>
-      <main id="main-content" class="contact">
-        <section id="form-options">
-          <div class="header"> <span class="caption">Let's Start</span>
-            <h1 class="title">How can we help you?</h1>
+      <main id="contact-form">
+        <section id="form-options" class="wrapper">
+          <div class="header"> 
+            <div class="caption"> <span>أهلا بكـ</span><span>&#33;                </span></div>
+            <h1 class="title">كيف نستطيع مساعدتك؟</h1>
           </div>
           <div class="options">
-            <div data-form="project" class="option">
+            <label for="project-label" data-form="project" class="option">
               <figure class="form-icon"><img src="./assets/images/contact/icon-project.svg" alt="project"></figure>
-              <h2>عندك مشروع ؟</h2>
-            </div>
-            <div data-form="chat" class="option">
+              <h2>مشروع ويب</h2>
+            </label>
+            <label for="chat-label" data-form="chat" class="option">
               <figure class="form-icon"><img src="./assets/images/contact/icon-chat.svg" alt="chat"></figure>
               <h2>شات</h2>
-            </div>
+            </label>
           </div>
         </section>
-        <section id="project">
+        <input id="project-label" type="radio" name="tabs">
+        <input id="chat-label" type="radio" name="tabs">
+        <section id="project" class="wrapper">
           <div class="form-steps">
             <ul>
               <li><a href="#project-setp-1" class="active">01</a></li>
@@ -55,45 +58,114 @@
             </ul>
           </div>
           <form action="" method="post">
-            <div id="project-setp-1" class="step">
+            <div id="project-step-1" class="step">
               <div class="header">
                 <div class="step-number"><strong>01</strong>&nbsp;— 04</div>
-                <h1 class="title">What do you need ?</h1>
+                <h1 class="title">ما الذي تحتاجه؟</h1>
               </div>
               <div class="options">
                 <div data-option="full-stack" class="option">
                   <figure class="form-icon"><img src="./assets/images/contact/full-stack.svg" alt="full stcak"></figure>
-                  <h2> Develope full Stack</h2>
+                  <h2> موقع متكامل</h2>
                 </div>
                 <div data-option="front-end" class="option">
                   <figure class="form-icon"><img src="./assets/images/contact/front-end.svg" alt=" front end"></figure>
-                  <h2> Develope front end</h2>
-                </div>
-                <div data-option="front-end" class="option">
-                  <figure class="form-icon"><img src="./assets/images/contact/both-icon.svg" alt=" front end"></figure>
-                  <h2> Design and Develope front end</h2>
+                  <h2> واجهات ويب</h2>
                 </div>
                 <input type="hidden" name="sub-catgeory" class="input-form">
               </div>
             </div>
-            <div id="project-setp-2" class="step">
+            <div id="project-step-2" class="step">
               <div class="header">
                 <div class="step-number"><strong>02</strong>&nbsp;— 04</div>
-                <h1 class="title">Budget and Timeline</h1>
-                <p class="desc">Time is the most valuable non-renewable resource we have. This dictates how much time we can put forth to make dreams reality.</p>
+                <h1 class="title">الميزانية والمدة الزمنية </h1>
+                <p class="desc">
+                  بما أن الوقت أثمن مصدر لدينا، نحتاج منك وضع مدة تقديرية للمشروع
+                  والميزانية المتاحة حتى نستطيع تحويل الأحلام لواقع.
+                </p>
               </div>
               <div class="sliders">
                 <div class="budget-slider"></div>
-                <p class="slider-caption">Approximate budget</p>
+                <p class="slider-caption">الميزانية المتاحة</p>
                 <input type="text" name="budget" readonly class="slider-input budget-input">
                 <div class="time-slider"></div>
-                <p class="slider-caption">ESTIMATED TIMELINE</p>
+                <p class="slider-caption">الجدول الزمني المتوقع</p>
                 <input type="text" name="time" readonly class="slider-input time-input">
+              </div>
+            </div>
+            <div id="project-step-3" class="step">
+              <div class="header">
+                <div class="step-number"><strong>03</strong>&nbsp;— 04</div>
+                <h1 class="title">تفاصيل المشروع</h1>
+              </div>
+              <div class="row project-details">
+                <div class="col">
+                  <input type="text" name="name" placeholder="* الإسم/ الشركة" required>
+                </div>
+                <div class="col">                         
+                  <input type="text" name="email" placeholder="* البريد الإلكتروني" required>
+                </div>
+                <div class="col">                       
+                  <input type="text" name="phone" placeholder="* رقم الجوال">
+                </div>
+                <div class="col">                       
+                  <input type="text" name="url" placeholder="رابط الموقع الحالي">
+                </div>
+                <div class="col textarea">                   
+                  <textarea name="proj-idea" placeholder="فكرة المشروع">  </textarea>
+                </div>
+              </div>
+            </div>
+            <div id="project-step-4" class="step">
+              <div class="header">
+                <div class="step-number"><strong>04</strong>&nbsp;— 04</div>
+                <h1 class="title">ما طريقة التواصل التي تفضلها؟</h1>
+                <p class="desc"> </p>
+              </div>
+              <div class="options">
+                <div data-option="phone" class="option">
+                  <figure class="form-icon"><img src="./assets/images/contact/full-stack.svg" alt="phone"></figure>
+                  <h2>مكالمة هاتفية</h2>
+                </div>
+                <div data-option="email" class="option">
+                  <figure class="form-icon"><img src="./assets/images/contact/both-icon.svg" alt="email"></figure>
+                  <h2> بريد إلكتروني</h2>
+                </div>
+                <div data-option="in-person" class="option">
+                  <figure class="form-icon"><img src="./assets/images/contact/both-icon.svg" alt="in-person"></figure>
+                  <h2> مقابلة شخصية  </h2><span>جدة فقط</span>
+                </div>
+                <input type="hidden" name="sub-catgeory" class="input-form">
+              </div>
+              <div class="submit">
+                <button type="submit" class="shade-btn">إرسال              </button>
               </div>
             </div>
           </form>
         </section>
-        <section id="chat"></section>
+        <section id="chat" class="wrapper">
+          <div class="header">
+            <h1 class="title">نحن نهتم برأيك</h1>
+          </div>
+          <form action="" method="post" class="row">
+            <div class="fields">
+              <div class="col">
+                <input type="text" name="name" placeholder="* الإسم" required>
+              </div>
+              <div class="col">                         
+                <input type="text" name="email" placeholder="* الإيميل" required>
+              </div>
+              <div class="col textarea">                  
+                <textarea name="chat-area" placeholder="What do you have on your mind?"> </textarea>
+              </div>
+            </div>
+            <div class="cta">
+              <div class="submit">
+                <button type="submit" class="shade-btn">Send</button>
+              </div>
+            </div>
+          </form>
+        </section>
       </main>
       <footer id="footer">
         <ul>

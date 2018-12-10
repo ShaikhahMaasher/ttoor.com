@@ -1,14 +1,11 @@
-
 // Initialize WOW library
-anime = new WOW (
-    {
-        boxClass:     'anime',     
-        animateClass: 'animated', 
-        offset:       10,          
-        mobile:       true,       
-        live:         true
-    }
-);
+anime = new WOW({
+    boxClass: 'anime',
+    animateClass: 'animated',
+    offset: 10,
+    mobile: true,
+    live: true
+});
 anime.init();
 // new WOW().init();
 
@@ -24,7 +21,7 @@ anime.init();
 window.addEventListener('scroll', function () {
     var $body = document.querySelector('.page-wrapper');
     var $works = document.querySelectorAll('.work');
-    
+
     //Back to defualt value
     $body.classList.forEach(className => {
         if (className.startsWith('color-')) {
@@ -34,7 +31,7 @@ window.addEventListener('scroll', function () {
     var scroll = window.scrollY + (window.innerHeight / 3);
     $works.forEach(work => {
         if (work.offsetTop <= scroll && work.offsetTop + work.clientHeight > scroll) {
-            
+
             // Remove all class in body with color
             $body.classList.forEach(className => {
                 if (className.startsWith('color-')) {
@@ -43,7 +40,7 @@ window.addEventListener('scroll', function () {
             });
             //Add color class to body
             $body.classList.add('color-' + work.getAttribute('data-color'));
-            console.log( work.getAttribute('data-color'));
+            console.log(work.getAttribute('data-color'));
         }
     });
 });
@@ -63,64 +60,68 @@ function closeNav() {
 var budgetSlider = document.querySelector('.budget-slider');
 var bugetInput = document.querySelector('.budget-input');
 noUiSlider.create(budgetSlider, {
-    start: [5],
+    start: [1000],
     connect: true,
     direction: 'rtl',
     range: {
-        'min': [15],
-        'max': [85]
+        'min': [1000],
+        'max': [40000]
     },
-    step: 10
-  });
-// Set value of budget Input  
-  budgetSlider.noUiSlider.on('update', function ( values, handle, unencoded, isTap, positions ) {
-    var secondValue = parseInt(unencoded) + parseInt(10);
-    var firstValue=parseInt(unencoded);
-    console.log(values);
-    bugetInput.value = 'SR  '+ secondValue +' k'+ ' - ' + firstValue +' k' ;
+    step: 500
+});
 
-  });
+// Set value of budget Input  
+budgetSlider.noUiSlider.on('update', function (values, handle, unencoded, isTap, positions) {
+    var secondValue = parseInt(unencoded) + parseInt(500);
+    var firstValue = parseInt(unencoded);
+    console.log(values);
+    bugetInput.value = 'SR  ' + secondValue + ' - ' + firstValue;
+
+});
+
 // =======Time Slider==========
 // Initialize time slider
 var timeSlider = document.querySelector('.time-slider');
 var timeInput = document.querySelector('.time-input');
 noUiSlider.create(timeSlider, {
-    start: [4],
+    start: [2],
     connect: true,
     direction: 'rtl',
     range: {
-        'min': 4,
-        'max': 50
+        'min': 2,
+        'max': 26
     },
     step: 1,
-    format: wNumb({
-    decimals: 0,
-    suffix: ' weeks',
-  })
-  });
-// Set value of time input
-  timeSlider.noUiSlider.on('update', function( values, handle ) {
-    var value = values[handle];
+    // format: wNumb({
+    //     decimals: 0,
+    //     suffix: 'أسبوع ',
+    // })
+});
 
-    if ( handle ) {
-        timeInput.value = value;
-    }else{
-        timeInput.value = value;
+// Set value of time input
+timeSlider.noUiSlider.on('update', function (values, handle) {
+    var value = values[handle];
+    value = parseInt(value);
+    var suffix = "أسبوع";
+    if (handle) {
+        timeInput.value = value + suffix;
+    } else {
+        timeInput.value = value + suffix;
     }
-  });
-  timeInput.addEventListener('change', function(){
+});
+timeInput.addEventListener('change', function () {
     timeSlider.noUiSlider.set([null, this.value]);
-  });
+});
 // ===== ADD SELECTED CLASS TO CONTACT'S OPTIONS=====
 // project-opitions
-var projectOptions= document.querySelectorAll('#project .option');
-clickOnMultiple(projectOptions,'selected');
+var projectOptions = document.querySelectorAll('#project .option');
+clickOnMultiple(projectOptions, 'selected');
 // form-opitions
-var formOptions= document.querySelectorAll('#form-options .option');
-clickOnMultiple(formOptions,'selected');
+var formOptions = document.querySelectorAll('#form-options .option');
+clickOnMultiple(formOptions, 'selected');
 //===========ADD ACTIVE CLASS TO CONTACT STEPS NUMBER===========
-var formSteps= document.querySelectorAll('.form-steps li a');
-clickOnMultiple(formSteps,'active');
+var formSteps = document.querySelectorAll('.form-steps li a');
+clickOnMultiple(formSteps, 'active');
 
 
 /**
@@ -128,11 +129,14 @@ clickOnMultiple(formSteps,'active');
  * @param {*} selectors list of selector
  * @param {*} className css class name
  */
-function clickOnMultiple(selectors,className){
-    selectors.forEach( selector => {
-        selector.addEventListener("click", function(){ addClass(className, selectors ,selector); })
-        });
+function clickOnMultiple(selectors, className) {
+    selectors.forEach(selector => {
+        selector.addEventListener("click", function () {
+            addClass(className, selectors, selector);
+        })
+    });
 }
+
 /**
  * This method will remove the class from list of specfic type selector and 
  * add this class to the target selector
@@ -140,8 +144,8 @@ function clickOnMultiple(selectors,className){
  * @param {*} $selector list of selector
  * @param {*} $this target selector
  */
-function addClass(className , $selectors , $this){
-    $selectors.forEach(select=>{
+function addClass(className, $selectors, $this) {
+    $selectors.forEach(select => {
         select.classList.remove(className);
     })
     $this.classList.add(className);
@@ -164,7 +168,7 @@ window.addEventListener('scroll', function () {
             });
             var stepId = step.getAttribute('id');
             console.log(stepId);
-            var targetStepNumber=document.querySelector(`[href='#${stepId}']`);
+            var targetStepNumber = document.querySelector(`[href='#${stepId}']`);
             // Add active class for target form
             console.log(`[href='#${stepId}']`);
             targetStepNumber.classList.add('active');

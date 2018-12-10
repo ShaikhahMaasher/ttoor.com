@@ -3,69 +3,120 @@ extends ./jade/master.jade
 block title 
     title ttoor | Contact
 block main
-    main#main-content.contact
-        section#form-options
+    main#contact-form
+        section#form-options.wrapper
             div.header 
-                span.caption Let's Start
-                h1.title How can we help you?
+                div.caption 
+                    span أهلا بكـ
+                    span &#33;                
+                h1.title كيف نستطيع مساعدتك؟
             div.options
-                div.option(data-form="project")
+                label.option(for="project-label", data-form="project")
                     figure.form-icon
                         img(src="./assets/images/contact/icon-project.svg" alt="project")
-                    h2 عندك مشروع ؟
-                div.option(data-form="chat")
+                    h2 مشروع ويب
+                label.option(for="chat-label", data-form="chat")
                     figure.form-icon
                         img(src="./assets/images/contact/icon-chat.svg" alt="chat")
                     h2 شات
-        section#project
-                div.form-steps
-                    ul
-                        li
-                            a(href="#project-setp-1" ).active 01
-                        li
-                            a(href="#project-setp-2" ) 02
-                        li
-                            a(href="#project-setp-3" ) 03
-                        li
-                            a(href="#project-setp-4" ) 04
-                form(action="", method="post")
-                    div#project-setp-1.step
-                        div.header
-                            div.step-number
-                                strong 01
-                                &nbsp;— 04
-                            h1.title What do you need ?
-                        div.options
-                            div.option(data-option="full-stack")
-                                figure.form-icon
-                                    img(src="./assets/images/contact/full-stack.svg", alt="full stcak")
-                                h2  Develope full Stack
-                            div.option(data-option="front-end")
-                                figure.form-icon
-                                    img(src="./assets/images/contact/front-end.svg", alt=" front end")
-                                h2  Develope front end
-                             div.option(data-option="front-end")
-                                figure.form-icon
-                                    img(src="./assets/images/contact/both-icon.svg", alt=" front end")
-                                h2  Design and Develope front end
-                            input(type="hidden", name="sub-catgeory").input-form
-                    div#project-setp-2.step
-                        div.header
-                            div.step-number
-                                strong 02
-                                &nbsp;— 04
-                            h1.title Budget and Timeline
-                            p.desc Time is the most valuable non-renewable resource we have. This dictates how much time we can put forth to make dreams reality.
-                        div.sliders
-                            div.budget-slider
-                            p.slider-caption Approximate budget
-                            input(type="text" name="budget" readonly).slider-input.budget-input
-                            div.time-slider
-                            p.slider-caption ESTIMATED TIMELINE
-                            input(type="text" name="time" readonly).slider-input.time-input
-
-                                    
-
-                                
-
-        section#chat
+        input#project-label(type="radio" name="tabs")
+        input#chat-label(type="radio" name="tabs")
+        section#project.wrapper
+            div.form-steps
+                ul
+                    li
+                        a(href="#project-setp-1" ).active 01
+                    li
+                        a(href="#project-setp-2" ) 02
+                    li
+                        a(href="#project-setp-3" ) 03
+                    li
+                        a(href="#project-setp-4" ) 04
+            form(action="", method="post")
+                div#project-step-1.step
+                    div.header
+                        div.step-number
+                            strong 01
+                            &nbsp;— 04
+                        h1.title ما الذي تحتاجه؟
+                    div.options
+                        div.option(data-option="full-stack")
+                            figure.form-icon
+                                img(src="./assets/images/contact/full-stack.svg", alt="full stcak")
+                            h2  موقع متكامل
+                        div.option(data-option="front-end")
+                            figure.form-icon
+                                img(src="./assets/images/contact/front-end.svg", alt=" front end")
+                            h2  واجهات ويب
+                        input(type="hidden", name="sub-catgeory").input-form
+                div#project-step-2.step
+                    div.header
+                        div.step-number
+                            strong 02
+                            &nbsp;— 04
+                        h1.title الميزانية والمدة الزمنية 
+                        p.desc بما أن الوقت أثمن مصدر لدينا، نحتاج منك وضع مدة تقديرية للمشروع
+                               | والميزانية المتاحة حتى نستطيع تحويل الأحلام لواقع.
+                    div.sliders
+                        div.budget-slider
+                        p.slider-caption الميزانية المتاحة
+                        input(type="text" name="budget" readonly).slider-input.budget-input
+                        div.time-slider
+                        p.slider-caption الجدول الزمني المتوقع
+                        input(type="text" name="time" readonly).slider-input.time-input
+                div#project-step-3.step
+                    div.header
+                        div.step-number
+                            strong 03
+                            &nbsp;— 04
+                        h1.title تفاصيل المشروع
+                    div.row.project-details
+                        div.col
+                            input(type="text", name="name", placeholder="* الإسم/ الشركة", required)                      
+                        div.col                          
+                            input(type="text", name="email", placeholder="* البريد الإلكتروني", required)                        
+                        div.col                        
+                            input(type="text", name="phone", placeholder="* رقم الجوال")                        
+                        div.col                        
+                            input(type="text", name="url", placeholder="رابط الموقع الحالي")                        
+                        div.col.textarea                    
+                            textarea(name="proj-idea", placeholder="فكرة المشروع")   
+                div#project-step-4.step
+                    div.header
+                        div.step-number
+                            strong 04
+                            &nbsp;— 04
+                        h1.title ما طريقة التواصل التي تفضلها؟
+                        p.desc  
+                    div.options
+                        div.option(data-option="phone")
+                            figure.form-icon
+                                img(src="./assets/images/contact/full-stack.svg", alt="phone")
+                            h2 مكالمة هاتفية
+                        div.option(data-option="email")
+                            figure.form-icon
+                                img(src="./assets/images/contact/both-icon.svg", alt="email")
+                            h2  بريد إلكتروني
+                        div.option(data-option="in-person")
+                            figure.form-icon
+                                img(src="./assets/images/contact/both-icon.svg", alt="in-person")
+                            h2  مقابلة شخصية  
+                            span جدة فقط
+                        input(type="hidden", name="sub-catgeory").input-form   
+                    div.submit
+                        button.shade-btn(type="submit") إرسال              
+        
+        section#chat.wrapper
+            div.header
+                h1.title نحن نهتم برأيك
+            form.row(action="", method="post")
+                div.fields
+                    div.col
+                        input(type="text", name="name", placeholder="* الإسم", required)                      
+                    div.col                          
+                        input(type="text", name="email", placeholder="* الإيميل", required)                                          
+                    div.col.textarea                   
+                        textarea(name="chat-area", placeholder="What do you have on your mind?") 
+                div.cta
+                    div.submit
+                        button.shade-btn(type="submit") Send

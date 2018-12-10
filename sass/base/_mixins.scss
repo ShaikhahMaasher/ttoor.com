@@ -140,3 +140,18 @@ Mixin to set a padding for a layout
     border: $border;
     color: $text-color;
 }
+
+@mixin scale($val) {
+    transform: scale($val);
+    -moz-transform: scale($val);
+    -webkit-transform: scale($val);
+    -o-transform: scale($val);
+    -ms-transform: scale($val);
+}
+
+@mixin transition($selected, $time, $method) {
+    transition: $selected $time $method;
+    -webkit-transition: $selected $time $method;
+    -moz-transition: $selected $time $method;
+    -o-transition: $selected $time $method;
+}
