@@ -25,13 +25,13 @@ block main
             div.form-steps
                 ul
                     li
-                        a(href="#project-setp-1" ).active 01
+                        a(href="#project-step-1") 01
                     li
-                        a(href="#project-setp-2" ) 02
+                        a(href="#project-step-2") 02
                     li
-                        a(href="#project-setp-3" ) 03
+                        a(href="#project-step-3") 03
                     li
-                        a(href="#project-setp-4" ) 04
+                        a(href="#project-step-4") 04
             form(action="", method="post")
                 div#project-step-1.step
                     div.header
@@ -40,15 +40,15 @@ block main
                             &nbsp;— 04
                         h1.title ما الذي تحتاجه؟
                     div.options
-                        div.option(data-option="full-stack")
+                        div.option(data-option="full-stack" data-next-step="project-step-2")
                             figure.form-icon
                                 img(src="./assets/images/contact/full-stack.svg", alt="full stcak")
                             h2  موقع متكامل
-                        div.option(data-option="front-end")
+                        div.option(data-option="front-end" data-next-step="project-step-2")
                             figure.form-icon
                                 img(src="./assets/images/contact/front-end.svg", alt=" front end")
                             h2  واجهات ويب
-                        input(type="hidden", name="sub-catgeory").input-form
+                        input(type="hidden", name="contact-way").input-form
                 div#project-step-2.step
                     div.header
                         div.step-number
@@ -105,7 +105,6 @@ block main
                         input(type="hidden", name="sub-catgeory").input-form   
                     div.submit
                         button.shade-btn(type="submit") إرسال              
-        
         section#chat.wrapper
             div.header
                 h1.title نحن نهتم برأيك
