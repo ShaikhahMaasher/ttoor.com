@@ -51,10 +51,10 @@
         <section id="project" class="wrapper">
           <div class="form-steps">
             <ul>
-              <li><a href="#project-setp-1" class="active">01</a></li>
-              <li><a href="#project-setp-2">02</a></li>
-              <li><a href="#project-setp-3">03</a></li>
-              <li><a href="#project-setp-4">04</a></li>
+              <li><a href="#project-step-1">01</a></li>
+              <li><a href="#project-step-2">02</a></li>
+              <li><a href="#project-step-3">03</a></li>
+              <li><a href="#project-step-4">04</a></li>
             </ul>
           </div>
           <form action="" method="post">
@@ -64,15 +64,15 @@
                 <h1 class="title">ما الذي تحتاجه؟</h1>
               </div>
               <div class="options">
-                <div data-option="full-stack" class="option">
+                <div data-option="full-stack" data-next-step="project-step-2" class="option">
                   <figure class="form-icon"><img src="./assets/images/contact/full-stack.svg" alt="full stcak"></figure>
                   <h2> موقع متكامل</h2>
                 </div>
-                <div data-option="front-end" class="option">
+                <div data-option="front-end" data-next-step="project-step-2" class="option">
                   <figure class="form-icon"><img src="./assets/images/contact/front-end.svg" alt=" front end"></figure>
                   <h2> واجهات ويب</h2>
                 </div>
-                <input type="hidden" name="sub-catgeory" class="input-form">
+                <input type="hidden" name="contact-way" class="input-form">
               </div>
             </div>
             <div id="project-step-2" class="step">

@@ -720,7 +720,7 @@ input[type=radio], section#project, section#chat {
   display: none;
   position: fixed;
   top: 50%;
-  left: 4%;
+  right: 4%;
   transform: translate(0, -50%);
   -moz-transform: translate(0, -50%);
   -webkit-transform: translate(0, -50%);

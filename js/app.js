@@ -40,7 +40,6 @@ window.addEventListener('scroll', function () {
             });
             //Add color class to body
             $body.classList.add('color-' + work.getAttribute('data-color'));
-            console.log(work.getAttribute('data-color'));
         }
     });
 });
@@ -74,7 +73,6 @@ noUiSlider.create(budgetSlider, {
 budgetSlider.noUiSlider.on('update', function (values, handle, unencoded, isTap, positions) {
     var secondValue = parseInt(unencoded) + parseInt(500);
     var firstValue = parseInt(unencoded);
-    console.log(values);
     bugetInput.value = 'SR  ' + secondValue + ' - ' + firstValue;
 
 });
@@ -92,21 +90,16 @@ noUiSlider.create(timeSlider, {
         'max': 26
     },
     step: 1,
-    // format: wNumb({
-    //     decimals: 0,
-    //     suffix: 'أسبوع ',
-    // })
 });
-
 // Set value of time input
 timeSlider.noUiSlider.on('update', function (values, handle) {
     var value = values[handle];
     value = parseInt(value);
     var suffix = "أسبوع";
     if (handle) {
-        timeInput.value = value + suffix;
+        timeInput.value = suffix + " "+ "\u200E" + value;
     } else {
-        timeInput.value = value + suffix;
+        timeInput.value = suffix + " "+ "\u200E" + value;
     }
 });
 timeInput.addEventListener('change', function () {
@@ -155,10 +148,6 @@ function addClass(className, $selectors, $this) {
 window.addEventListener('scroll', function () {
     var $stepsNumber = document.querySelectorAll('.form-steps li a');
     var $steps = document.querySelectorAll('.step');
-    //Back to defualt value
-    $stepsNumber.forEach(stepNumber => {
-        stepNumber.classList.remove('active');
-    });
     var scroll = window.scrollY + (window.innerHeight / 3);
     $steps.forEach(step => {
         if (step.offsetTop <= scroll && step.offsetTop + step.clientHeight > scroll) {
@@ -167,11 +156,43 @@ window.addEventListener('scroll', function () {
                 stepNumber.classList.remove('active');
             });
             var stepId = step.getAttribute('id');
-            console.log(stepId);
             var targetStepNumber = document.querySelector(`[href='#${stepId}']`);
             // Add active class for target form
-            console.log(`[href='#${stepId}']`);
             targetStepNumber.classList.add('active');
         }
     });
+});
+
+//===========SCROLL TO===========
+//Scroll to next step in project section
+$("#project .option").on('click', function (event) {
+    event.preventDefault();
+    var nextStep = $(this).data("next-step");
+    setTimeout(function(){
+        $('html, body').animate({
+          scrollTop: $('div#'+nextStep+'').offset().top
+        }, 500);
+        return false;
+    }, 400);
+});
+
+//Scroll to target section 
+$("#form-options .option").on('click', function (event) {
+    event.preventDefault();
+    var sectionName = $(this).data("form");
+    setTimeout(function(){
+        $('section#'+sectionName+'').fadeIn(function(){
+        $('html, body').animate({
+          scrollTop: $('section#'+sectionName+'').offset().top
+        }, 500);
+        return false;
+    });
+},400);
+});
+
+// Set name of selected option to input's value 
+$("#project .option").on('click', function (event) {
+    event.preventDefault();
+    var value = $(this).data("option");
+    $(this).parents('.options').children('.input-form').val(value);
 });
