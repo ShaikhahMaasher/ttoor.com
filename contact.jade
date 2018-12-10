@@ -91,17 +91,17 @@ block main
                     div.options
                         div.option(data-option="phone")
                             figure.form-icon
-                                img(src="./assets/images/contact/full-stack.svg", alt="phone")
+                                img(src="./assets/images/icons/contact/phone.svg", alt="phone")
                             h2 مكالمة هاتفية
                         div.option(data-option="email")
                             figure.form-icon
-                                img(src="./assets/images/contact/both-icon.svg", alt="email")
+                                img(src="./assets/images/icons/contact/mail.svg", alt="email")
                             h2  بريد إلكتروني
                         div.option(data-option="in-person")
                             figure.form-icon
-                                img(src="./assets/images/contact/both-icon.svg", alt="in-person")
+                                img(src="./assets/images/icons/contact/meeting.svg", alt="in-person")
                             h2  مقابلة شخصية  
-                            span جدة فقط
+                            span.note &#40;جدة فقط&#41;
                         input(type="hidden", name="sub-catgeory").input-form   
                     div.submit
                         button.shade-btn(type="submit") إرسال              
@@ -115,8 +115,8 @@ block main
                         input(type="text", name="name", placeholder="* الإسم", required)                      
                     div.col                          
                         input(type="text", name="email", placeholder="* الإيميل", required)                                          
-                    div.col.textarea                   
-                        textarea(name="chat-area", placeholder="What do you have on your mind?") 
+                    div.col.textarea                  
+                        textarea(cols="50", rows="4", name="chat-area", placeholder="ما الذي يدور في بالك؟")
                 div.cta
                     div.submit
-                        button.shade-btn(type="submit") Send
+                        button.shade-btn(type="submit") إرسال

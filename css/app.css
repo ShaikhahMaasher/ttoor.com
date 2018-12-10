@@ -178,10 +178,10 @@ a {
 }
 @keyframes shades-ripple {
   0% {
-    box-shadow: 0 4px 10px rgba(102, 102, 102, 0.1), 0 0 0 0 rgba(102, 102, 102, 0.1), 0 0 0 5px rgba(102, 102, 102, 0.1), 0 0 0 10px rgba(102, 102, 102, 0.1);
+    box-shadow: 0 4px 10px rgba(68, 15, 78, 0.5), 0 0 4px 0 rgba(68, 15, 78, 0.5), 0 0 0 5px rgba(68, 15, 78, 0.1), 0 0 0 10px rgba(68, 15, 78, 0.1);
   }
   100% {
-    box-shadow: 0 4px 10px rgba(102, 102, 102, 0.1), 0 0 0 5px rgba(102, 102, 102, 0.1), 0 0 0 10px rgba(102, 102, 102, 0.1), 0 0 0 20px rgba(102, 102, 102, 0);
+    box-shadow: 0 4px 10px rgba(68, 15, 78, 0.5), 0 0 4px 5px rgba(68, 15, 78, 0.5), 0 0 0 10px rgba(68, 15, 78, 0.1), 0 0 0 20px rgba(68, 15, 78, 0);
   }
 }
 /* 
@@ -300,8 +300,14 @@ body, body * {
   transition: background-color 0.4s ease-out;
 }
 
-html[lang=ar] .text, html[lang=ar] input {
+html[lang=ar] .text, html[lang=ar] input, html[lang=ar] textarea {
   text-align: right;
+}
+
+.note {
+  font-weight: lighter;
+  font-size: 0.8em;
+  letter-spacing: 0.5px;
 }
 
 #hero {
@@ -668,7 +674,7 @@ input[type=radio], section#project, section#chat {
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
   flex-wrap: wrap;
 }
 #project .options .option {
@@ -985,8 +991,8 @@ html[lang=ar] #form-options .options {
 
 .shade-btn {
   background: #fff;
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   padding: 12px;
   border-radius: 100%;
   box-sizing: border-box;
@@ -995,6 +1001,14 @@ html[lang=ar] #form-options .options {
   font-weight: bold;
   -webkit-animation: shades-ripple 0.6s linear infinite;
   animation: shades-ripple 0.6s linear infinite;
+  background: #440F4E;
+  color: #fff;
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.shade-btn:hover {
+  animation: none;
+  -webkit-animation: none;
+  transform: scale(1.2);
 }
 
 #chat .title {

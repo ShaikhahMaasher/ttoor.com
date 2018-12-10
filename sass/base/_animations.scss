@@ -59,10 +59,10 @@
 
 @keyframes shades-ripple {
     0% {
-        box-shadow: 0 4px 10px rgba(102, 102, 102, 0.1), 0 0 0 0 rgba(102, 102, 102, 0.1), 0 0 0 5px rgba(102, 102, 102, 0.1), 0 0 0 10px rgba(102, 102, 102, 0.1);
+        box-shadow: 0 4px 10px $paper-purple-rgba, 0 0 4px 0 $paper-purple-rgba, 0 0 0 5px rgba(68, 15, 78, 0.1), 0 0 0 10px rgba(68, 15, 78, 0.1);
     }
 
     100% {
-        box-shadow: 0 4px 10px rgba(102, 102, 102, 0.1), 0 0 0 5px rgba(102, 102, 102, 0.1), 0 0 0 10px rgba(102, 102, 102, 0.1), 0 0 0 20px rgba(102, 102, 102, 0);
+        box-shadow: 0 4px 10px $paper-purple-rgba, 0 0 4px 5px $paper-purple-rgba, 0 0 0 10px rgba(68, 15, 78, 0.1), 0 0 0 20px rgba(68, 15, 78, 0);
     }
 }

@@ -80,9 +80,14 @@
 }
 
 html[lang=ar] {
-    .text, input {
+    .text, input, textarea {
         text-align: right;
     }
 }
 
+.note {
+    font-weight: lighter;
+    font-size: 0.8em;
+    letter-spacing: 0.5px;
+}
 
