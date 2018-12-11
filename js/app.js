@@ -179,6 +179,7 @@ $("#project .option").on('click', function (event) {
 //Scroll to target section 
 $("#form-options .option").on('click', function (event) {
     event.preventDefault();
+    $('#project, #chat').fadeOut();
     var sectionName = $(this).data("form");
     setTimeout(function(){
         $('section#'+sectionName+'').fadeIn(function(){
@@ -195,4 +196,15 @@ $("#project .option").on('click', function (event) {
     event.preventDefault();
     var value = $(this).data("option");
     $(this).parents('.options').children('.input-form').val(value);
+});
+
+
+// Setup Form Validation
+$.validate({
+    modules: 'security, sweden',
+    onError: function($form) {
+        $('html, body').animate({
+          scrollTop: $('.form-error').offset().top
+        }, 500);
+    },
 });

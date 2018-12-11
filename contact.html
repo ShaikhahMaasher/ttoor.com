@@ -96,23 +96,23 @@
             <div id="project-step-3" class="step">
               <div class="header">
                 <div class="step-number"><strong>03</strong>&nbsp;— 04</div>
-                <h1 class="title">تفاصيل المشروع</h1>
+                <h1 class="title">تفاصيل المشروع                   </h1>
               </div>
               <div class="row project-details">
                 <div class="col">
-                  <input type="text" name="name" placeholder="* الإسم/ الشركة" required>
+                  <input type="text" name="name" placeholder="* الإسم/ الشركة" data-validation="length required" data-validation-length="3-40" data-validation-error-msg-required="الرجاء إدخال الإسم" data-validation-error-msg-length="يجب أن لا يقل الإسم عن 3 أحرف">
                 </div>
-                <div class="col">                         
-                  <input type="text" name="email" placeholder="* البريد الإلكتروني" required>
-                </div>
-                <div class="col">                       
-                  <input type="text" name="phone" placeholder="* رقم الجوال">
+                <div class="col">                  
+                  <input type="text" name="email" placeholder="* البريد الإلكتروني" data-validation="email required" data-validation-error-msg-required="الرجاء إدخال البريد الإلكتروني" data-validation-error-msg-email="الرجاء التأكد من البريد الإلكتروني">
                 </div>
                 <div class="col">                       
-                  <input type="text" name="url" placeholder="رابط الموقع الحالي">
+                  <input type="text" name="phone" placeholder="* رقم الهاتف" data-validation="swephone required" data-validation-optional-if-answered="home-phone, cell-phone" data-validation-error-msg-required="الرجاء إدخال رقم الهاتف" data-validation-error-msg-swephone="يجب إدخال رقم هاتف صحيح">
+                </div>
+                <div class="col">                       
+                  <input type="text" name="url" placeholder="رابط الموقع الحالي" data-validation="url" data-validation-optional="true" data-validation-error-msg="الرابط المدخل غير صحيح">
                 </div>
                 <div class="col textarea">                   
-                  <textarea name="proj-idea" placeholder="فكرة المشروع">  </textarea>
+                  <textarea cols="50" rows="4" name="proj-idea" placeholder="فكرة المشروع">  </textarea>
                 </div>
               </div>
             </div>
@@ -150,10 +150,10 @@
           <form action="" method="post" class="row">
             <div class="fields">
               <div class="col">
-                <input type="text" name="name" placeholder="* الإسم" required>
+                <input type="text" name="name" placeholder="* الإسم" data-validation="length required" data-validation-length="3-40" data-validation-error-msg-required="الرجاء إدخال الإسم" data-validation-error-msg="يجب أن لا يقل الإسم عن 3 أحرف">
               </div>
               <div class="col">                         
-                <input type="text" name="email" placeholder="* الإيميل" required>
+                <input type="text" name="email" placeholder="* الإيميل" data-validation="email required" data-validation-error-msg-required="الرجاء إدخال البريد الإلكتروني" data-validation-error-msg-email="الرجاء التأكد من البريد الإلكتروني">
               </div>
               <div class="col textarea">                 
                 <textarea cols="50" rows="4" name="chat-area" placeholder="ما الذي يدور في بالك؟"></textarea>
@@ -209,6 +209,7 @@
     <script src="js/lib/jquery.parallax-scroll.js"></script>
     <script src="js/lib/wNumb.js"></script>
     <script src="js/lib/nouislider.js"></script>
+    <script src="js/lib/jquery.form-validator.min.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>

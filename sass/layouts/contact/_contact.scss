@@ -367,3 +367,13 @@ html[lang="ar"] {
         flex-wrap: wrap;
     }
 }
+
+// Styling validation msgs
+.form-error {
+    display: block;
+    margin-top: -1em;
+    text-align: left;
+    font-size: .6em;
+    color: #D6372E;
+    text-align: right;
+}

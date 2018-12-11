@@ -1020,6 +1020,15 @@ html[lang=ar] #form-options .options {
   flex-wrap: wrap;
 }
 
+.form-error {
+  display: block;
+  margin-top: -1em;
+  text-align: left;
+  font-size: 0.6em;
+  color: #D6372E;
+  text-align: right;
+}
+
 nav {
   position: fixed;
   top: 0;
