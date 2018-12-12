@@ -1,0 +1,121 @@
+extends ./jade/master.jade
+//- Validation masseges 
+block title 
+    title ttoor | Contact
+block main
+    main#contact-form
+        section#form-options.wrapper
+            div.header 
+                div.caption 
+                    span أهلا بكـ
+                    span &#33;                
+                h1.title كيف نستطيع مساعدتك؟
+            div.options
+                label.option(for="project-label", data-form="project")
+                    figure.form-icon
+                        img(src="./assets/images/contact/icon-project.svg" alt="project")
+                    h2 مشروع ويب
+                label.option(for="chat-label", data-form="chat")
+                    figure.form-icon
+                        img(src="./assets/images/contact/icon-chat.svg" alt="chat")
+                    h2 شات
+        input#project-label(type="radio" name="tabs")
+        input#chat-label(type="radio" name="tabs")
+        section#project.wrapper
+            div.form-steps
+                ul
+                    li
+                        a(href="#project-step-1") 01
+                    li
+                        a(href="#project-step-2") 02
+                    li
+                        a(href="#project-step-3") 03
+                    li
+                        a(href="#project-step-4") 04
+            form(action="", method="post")
+                div#project-step-1.step
+                    div.header
+                        div.step-number
+                            strong 01
+                            &nbsp;— 04
+                        h1.title ما الذي تحتاجه؟
+                    div.options
+                        div.option(data-option="full-stack" data-next-step="project-step-2")
+                            figure.form-icon
+                                img(src="./assets/images/contact/full-stack.svg", alt="full stcak")
+                            h2  موقع متكامل
+                        div.option(data-option="front-end" data-next-step="project-step-2")
+                            figure.form-icon
+                                img(src="./assets/images/contact/front-end.svg", alt=" front end")
+                            h2  واجهات ويب
+                        input(type="hidden", name="user-need").input-form
+                div#project-step-2.step
+                    div.header
+                        div.step-number
+                            strong 02
+                            &nbsp;— 04
+                        h1.title الميزانية والمدة الزمنية 
+                        p.desc بما أن الوقت أثمن مصدر لدينا، نحتاج منك وضع مدة تقديرية للمشروع
+                               | والميزانية المتاحة حتى نستطيع تحويل الأحلام لواقع.
+                    div.sliders
+                        div.budget-slider
+                        p.slider-caption الميزانية المتاحة
+                        input(type="text" name="budget" readonly).slider-input.budget-input
+                        div.time-slider
+                        p.slider-caption الجدول الزمني المتوقع
+                        input(type="text" name="time" readonly).slider-input.time-input
+                div#project-step-3.step
+                    div.header
+                        div.step-number
+                            strong 03
+                            &nbsp;— 04
+                        h1.title تفاصيل المشروع                   
+                    div.row.project-details
+                        div.col
+                            input(type="text", name="name", placeholder="* الإسم/ الشركة", data-validation="length required", data-validation-length="3-40", data-validation-error-msg-required="الرجاء إدخال الإسم", data-validation-error-msg-length="يجب أن لا يقل الإسم عن 3 أحرف")                      
+                        div.col                   
+                            input(type="text", name="email", placeholder="* البريد الإلكتروني", data-validation="email required", data-validation-error-msg-required="الرجاء إدخال البريد الإلكتروني", data-validation-error-msg-email="الرجاء التأكد من البريد الإلكتروني")                        
+                        div.col                        
+                            input(type="text", name="phone", placeholder="* رقم الهاتف", data-validation="swephone required", data-validation-optional-if-answered="home-phone, cell-phone", data-validation-error-msg-required="الرجاء إدخال رقم الهاتف", data-validation-error-msg-swephone="يجب إدخال رقم هاتف صحيح")                        
+                        div.col                        
+                            input(type="text", name="url", placeholder="رابط الموقع الحالي", data-validation="url", data-validation-optional="true", data-validation-error-msg="الرابط المدخل غير صحيح")                        
+                        div.col.textarea                    
+                            textarea(cols="50", rows="4", name="proj-idea", placeholder="فكرة المشروع")   
+                div#project-step-4.step
+                    div.header
+                        div.step-number
+                            strong 04
+                            &nbsp;— 04
+                        h1.title ما طريقة التواصل التي تفضلها؟
+                        p.desc  
+                    div.options
+                        div.option(data-option="phone")
+                            figure.form-icon
+                                img(src="./assets/images/icons/contact/phone.svg", alt="phone")
+                            h2 مكالمة هاتفية
+                        div.option(data-option="email")
+                            figure.form-icon
+                                img(src="./assets/images/icons/contact/mail.svg", alt="email")
+                            h2  بريد إلكتروني
+                        div.option(data-option="in-person")
+                            figure.form-icon
+                                img(src="./assets/images/icons/contact/meeting.svg", alt="in-person")
+                            h2  مقابلة شخصية  
+                            span.note &#40;جدة فقط&#41;
+                        input(type="hidden", name="contact-way").input-form   
+                    div.submit
+                        button.shade-btn(type="submit") إرسال              
+        section#chat.wrapper
+            div.header
+                h1.title نحن نهتم برأيك
+            form.row(action="", method="post")
+                div.fields
+                    div.col
+                        input(type="text", name="name", placeholder="* الإسم", data-validation="length required", data-validation-length="3-40", data-validation-error-msg-required="الرجاء إدخال الإسم", data-validation-error-msg="يجب أن لا يقل الإسم عن 3 أحرف")                      
+                    div.col                          
+                        input(type="text", name="email", placeholder="* الإيميل", data-validation="email required", data-validation-error-msg-required="الرجاء إدخال البريد الإلكتروني", data-validation-error-msg-email="الرجاء التأكد من البريد الإلكتروني")                                          
+                    div.col.textarea                  
+                        textarea(cols="50", rows="4", name="chat-area", placeholder="ما الذي يدور في بالك؟")
+                div.cta
+                    div.submit
+                        button.shade-btn(type="submit") إرسال
